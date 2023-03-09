@@ -9,4 +9,4 @@ export type AppRoute = {
   props?: RouteProps;
 };
 
-export type AppRoutes = AppRoute[];
+export type AppRoutes = Array<AppRoute>;
