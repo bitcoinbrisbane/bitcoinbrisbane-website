@@ -2,10 +2,10 @@ import React from "react";
 import { Button } from "./Button";
 
 export const BTC: React.FC = () => (
-  <div className="flex items-center justify-end mt-8 px-6">
+  <div className="flex lg:absolute lg:bottom-24 items-center justify-end mt-8 px-6 lg:px-0 lg:pl-16">
     <div className="flex flex-col items-end relative z-50">
-      <Button title="BTC $30,000" />
-      <span className="block text-xs -rotate-[5deg] relative top-2 left-4 font-hand">
+      <Button title="BTC $30,000" long />
+      <span className="block text-xs lg:text-3xl -rotate-[5deg] relative top-2 lg:top-3 left-4 lg:left-16 font-hand">
         number go up!
       </span>
     </div>

@@ -6,18 +6,22 @@ export const Clouds: React.FC = () => (
     <img
       src={Cloud}
       alt="Cloud"
-      className="w-1/2 lg:w-[12%] lg:relative lg:top-24"
-    />
-    <img src={Cloud} alt="Cloud" className="w-1/2 lg:w-[12%] hidden lg:block" />
-    <img
-      src={Cloud}
-      alt="Cloud"
-      className="w-1/2 lg:w-[12%] hidden lg:block lg:relative top-48"
+      className="w-1/2 lg:w-[12%] lg:relative lg:top-24 animate-cloud"
     />
     <img
       src={Cloud}
       alt="Cloud"
-      className="relative top-24 lg:top-8 w-1/2 lg:w-[12%] lg:relative"
+      className="w-1/2 lg:w-[12%] hidden lg:block animate-cloud-2"
+    />
+    <img
+      src={Cloud}
+      alt="Cloud"
+      className="w-1/2 lg:w-[12%] hidden lg:block lg:relative top-48 animate-cloud"
+    />
+    <img
+      src={Cloud}
+      alt="Cloud"
+      className="relative top-24 lg:top-8 w-1/2 lg:w-[12%] lg:relative animate-cloud-2"
     />
   </div>
 );
