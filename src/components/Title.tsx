@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "./Button";
 
 export const Title: React.FC = () => (
   <div className="flex flex-col items-center text-white z-50 relative pt-16">
@@ -10,5 +11,18 @@ export const Title: React.FC = () => (
       <br />
       BITCOIN SUBJECT MATTER EXPERTS
     </h2>
+    <div className="mt-4">
+      <Button
+        title="BOOK A CONSULTATION"
+        onClick={() =>
+          // robots can still crawl javascript links so we don't lose SEO
+          window.open(
+            "https://outlook.office365.com/owa/calendar/BitcoinBrisbane@bitcoinbrisbane.com.au/bookings/",
+            "_blank",
+            "noopener noreferrer"
+          )
+        }
+      />
+    </div>
   </div>
 );
