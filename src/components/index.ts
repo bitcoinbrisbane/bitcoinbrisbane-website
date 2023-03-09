@@ -3,6 +3,6 @@ export * from "./Landing";
 export * from "./Clouds";
 export * from "./Title";
 export * from "./Button";
-export * from "./Coins";
+export * from "./MobileCoins";
 export * from "./BTC";
 export * from "./NextMeetup";

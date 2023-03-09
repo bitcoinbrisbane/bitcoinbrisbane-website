@@ -1,7 +1,7 @@
 import React from "react";
 import { Clouds } from "./Clouds";
 import { Title } from "./Title";
-import { Coins } from "./Coins";
+import { MobileCoins } from "./MobileCoins";
 import { BTC } from "./BTC";
 import { Hills } from "./Hills";
 
@@ -10,7 +10,7 @@ export const Landing: React.FC = () => (
     <Clouds />
     <Title />
     <BTC />
-    <Coins />
+    <MobileCoins />
     <Hills />
   </section>
 );

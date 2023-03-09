@@ -1,7 +1,7 @@
 import React from "react";
 import { Coin } from "../assets";
 
-export const Coins: React.FC = () => (
+export const MobileCoins: React.FC = () => (
   <div className="flex lg:hidden items-center justify-between relative bottom-1">
     <img
       src={Coin}
