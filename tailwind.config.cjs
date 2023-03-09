@@ -11,7 +11,6 @@ module.exports = {
       },
       colors: {
         green: "#10b981",
-        "light-purple": "#4f46e5",
         purple: "#4338ca",
         yellow: "#f9eb57"
       }

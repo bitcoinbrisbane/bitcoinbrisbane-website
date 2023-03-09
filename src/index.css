@@ -33,7 +33,7 @@
     filter: drop-shadow(4px 4px 0 black);
   }
   .big-shadow {
-    filter: drop-shadow(8px 8px 0 black);
+    filter: drop-shadow(10px 10px 0 black);
   }
   .animate-cloud {
     animation: cloud 3s infinite;

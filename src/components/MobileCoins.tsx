@@ -6,7 +6,7 @@ export const MobileCoins: React.FC = () => (
     <img
       src={Coin}
       alt="Coin"
-      className="w-[20vw] relative big-shadow -rotate-12 left-[4vw] top-[1vh]"
+      className="w-[20vw] relative small-shadow -rotate-12 left-[4vw] top-[1vh]"
     />
     <img
       src={Coin}
