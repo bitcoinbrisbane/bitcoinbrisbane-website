@@ -1,9 +1,9 @@
 import React from "react";
-import { PageLayout } from "../components";
+import { Landing, PageLayout } from "../components";
 
 const Home: React.FC = () => (
   <PageLayout>
-    <h1>Home</h1>
+    <Landing />
   </PageLayout>
 );
 
