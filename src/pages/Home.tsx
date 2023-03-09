@@ -1,9 +1,10 @@
 import React from "react";
-import { Landing, PageLayout } from "../components";
+import { Landing, NextMeetup, PageLayout } from "../components";
 
 const Home: React.FC = () => (
   <PageLayout>
     <Landing />
+    <NextMeetup />
   </PageLayout>
 );
 
