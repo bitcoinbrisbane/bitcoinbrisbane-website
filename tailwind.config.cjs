@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter var", ...defaultTheme.fontFamily.sans]
+        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
+        hand: ["'Gochi Hand'", "cursive", ...defaultTheme.fontFamily.sans]
       },
       colors: {
         green: "#10b981",

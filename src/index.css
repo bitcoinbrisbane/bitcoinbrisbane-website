@@ -20,4 +20,7 @@
   .small-shadow {
     filter: drop-shadow(4px 4px 0 black);
   }
+  .big-shadow {
+    filter: drop-shadow(8px 8px 0 black);
+  }
 }
