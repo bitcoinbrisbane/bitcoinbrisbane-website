@@ -2,7 +2,7 @@ import React from "react";
 import { Coin } from "../assets";
 
 export const Coins: React.FC = () => (
-  <div className="flex items-center justify-between relative bottom-1">
+  <div className="flex lg:hidden items-center justify-between relative bottom-1">
     <img
       src={Coin}
       alt="Coin"

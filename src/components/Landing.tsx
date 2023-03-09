@@ -3,6 +3,7 @@ import { Clouds } from "./Clouds";
 import { Title } from "./Title";
 import { Coins } from "./Coins";
 import { BTC } from "./BTC";
+import { Hills } from "./Hills";
 
 export const Landing: React.FC = () => (
   <section className="min-h-[50vh] lg:h-screen bg-gradient-to-b from-purple via-light-purple to-green">
@@ -10,5 +11,6 @@ export const Landing: React.FC = () => (
     <Title />
     <BTC />
     <Coins />
+    <Hills />
   </section>
 );
