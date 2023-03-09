@@ -1,10 +1,10 @@
 import React from "react";
 import { PageLayout } from "../components";
 
-const NotFound: React.FC = () => (
+const Home: React.FC = () => (
   <PageLayout>
-    <h1>Not Found</h1>
+    <h1>Home</h1>
   </PageLayout>
 );
 
-export default NotFound;
+export default Home;
