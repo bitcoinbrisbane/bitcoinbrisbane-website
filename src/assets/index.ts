@@ -5,6 +5,7 @@ export { default as Hill } from "./Hill.png";
 export { default as SwyftX } from "./SwyftX.png";
 export { default as DLTx } from "./DLTx.png";
 export { default as Mycelium } from "./Mycelium.png";
+export { default as Bridge } from "./Bridge.png";
 
 import { default as MeetupOne } from "./MeetupOne.png";
 import { default as MeetupTwo } from "./MeetupTwo.png";
