@@ -12,13 +12,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port 3000",
-    "build": "yarn sitemap && tsc && vite build",
+    "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "pretty-quick --staged",
     "format": "prettier -w src",
-    "prepare": "husky install",
-    "sitemap": "ts-node ./scripts/sitemap.ts",
-    "postbuild": "ts-node ./scripts/postbuild.ts https://bitcoinbrisbane.com.au"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.13",
