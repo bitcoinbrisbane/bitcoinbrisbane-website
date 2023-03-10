@@ -1,12 +1,13 @@
 import React from "react";
 import { Date } from "../assets";
+import { Images } from "./Images";
 
 export const NextMeetup: React.FC = () => (
   <section className="w-full mt-12 px-6">
     <h2 className="font-black title text-5xl lg:text-9xl w-full text-center text-white">
       NEXT MEETUP
     </h2>
-    <div className="w-full px-6 lg:px-12 mt-10 lg:mt-24 font-hand">
+    <div className="w-full px-6 lg:px-12 mt-10 lg:mt-24 font-hand lg:flex">
       <div className="flex items-center justify-center w-full gap-x-4 lg:gap-x-10 lg:max-w-[50%]">
         <img
           src={Date}
@@ -57,6 +58,9 @@ export const NextMeetup: React.FC = () => (
             Link
           </a>
         </span>
+      </div>
+      <div className="hidden lg:block max-w-[50%]">
+        <Images />
       </div>
     </div>
   </section>

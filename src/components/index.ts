@@ -8,3 +8,4 @@ export * from "./BTC";
 export * from "./NextMeetup";
 export * from "./Hills";
 export * from "./DesktopCoins";
+export * from "./Images";
