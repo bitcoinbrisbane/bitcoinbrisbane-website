@@ -9,3 +9,4 @@ export * from "./NextMeetup";
 export * from "./Hills";
 export * from "./DesktopCoins";
 export * from "./Images";
+export * from "./Sponsors";
