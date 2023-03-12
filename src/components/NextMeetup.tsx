@@ -30,13 +30,26 @@ export const NextMeetup: React.FC = () => (
               6pm AEST | The Precinct |{" "}
               <a
                 className="underline underline-offset-4"
-                href="https://www.meetup.com/bitcoinbrisbane/events/291902672/"
+                href="https://www.meetup.com/bitcoinbrisbane/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 RSVP
               </a>
             </span>
+          </div>
+          <div className="hidden lg:flex flex-col gap-y-4">
+            <p className="mt-4 text-4xl">
+              Checkout our other events @  
+              <a
+                className="underline underline-offset-4"
+                href="https://www.meetup.com/bitcoinbrisbane/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+              meetup.com/bitcoinbrisbane
+              </a>
+            </p>
           </div>
         </div>
       </div>
