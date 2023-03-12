@@ -34,7 +34,7 @@ export const NextMeetup: React.FC = () => (
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Link
+                RSVP
               </a>
             </span>
           </div>
