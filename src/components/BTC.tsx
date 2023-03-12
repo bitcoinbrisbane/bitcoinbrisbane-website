@@ -30,7 +30,7 @@ import axios from "axios";
 export function BTC() {
   const [price, setPrice] = useState("0");
   useEffect(() => {
-    async function fetchBitcoinPrice() {
+    const fetchBitcoinPrice = async () => {
       try {
         const response = await axios.get('https://api.coindesk.com/v1/bpi/currentprice.json');
         setPrice(response.data.bpi.USD.rate);
