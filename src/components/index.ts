@@ -10,3 +10,4 @@ export * from "./Hills";
 export * from "./DesktopCoins";
 export * from "./Images";
 export * from "./Sponsors";
+export * from "./Footer";
