@@ -22,7 +22,7 @@ export const NextMeetup: React.FC = () => (
           <div className="hidden lg:flex flex-col gap-y-4">
             <p className="mt-4 text-2xl">
               Looking to connect with fellow enthusiasts of cryptocurrency,
-              non-fungible tokens (NFT&apos;s), and ordinal numbers? Then join
+              non-fungible tokens (NFT&apos;s), and BTC ordinals? Then join
               us for a meetup that explores the intersection of these exciting
               new technologies!
             </p>
@@ -42,7 +42,7 @@ export const NextMeetup: React.FC = () => (
       </div>
       <p className="mt-4 leading-[1.2rem] lg:hidden">
         Looking to connect with fellow enthusiasts of cryptocurrency,
-        non-fungible tokens (NFT&apos;s), and ordinal numbers? Then join us for
+        non-fungible tokens (NFT&apos;s), and BTC ordinals? Then join us for
         a meetup that explores the intersection of these exciting new
         technologies!
       </p>
