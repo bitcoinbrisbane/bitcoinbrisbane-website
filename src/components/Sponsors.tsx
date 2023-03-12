@@ -1,5 +1,5 @@
 import React from "react";
-import { DLTx, Mycelium, SwyftX } from "../assets";
+import { DLTx, GPIB, Mycelium, SwyftX } from "../assets";
 
 export const Sponsors: React.FC = () => (
   <section className="w-full mt-12 lg:mt-48 px-6 lg:pt-32">
@@ -15,10 +15,22 @@ export const Sponsors: React.FC = () => (
             className="hidden lg:block w-[10vw] scale-[0.5] relative bottom-8"
           />
           <p className="mb-6 lg:mb-12">
-            <span className="text-3xl lg:text-5xl">DLTX LABS</span>
+            <span className="text-3xl lg:text-5xl">DLTx LABS</span>
             <br />
             Brisbane&apos;s best blockchain venture studio for their support and
             Ledger Hardware Wallet door prizes!
+          </p>
+        </div>
+        <div className="flex items-center gap-x-8">
+          <img
+            src={GPIB}
+            alt="Get Paid In Bitcoin"
+            className="hidden lg:block w-[10vw] scale-[0.5] relative bottom-8"
+          />
+          <p className="mb-6 lg:mb-12">
+            <span className="text-3xl lg:text-5xl">GET PAID IN BITCOIN</span>
+            <br />
+            The easiest way to stack stats.
           </p>
         </div>
         <div className="flex items-center gap-x-8">

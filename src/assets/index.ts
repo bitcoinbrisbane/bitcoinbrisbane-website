@@ -2,9 +2,11 @@ export { default as Cloud } from "./Cloud.png";
 export { default as Coin } from "./Coin.png";
 export { default as Date } from "./Date.png";
 export { default as Hill } from "./Hill.png";
-export { default as SwyftX } from "./SwyftX.png";
+
 export { default as DLTx } from "./DLTx.png";
+export { default as GPIB } from "./GPIB.png";
 export { default as Mycelium } from "./Mycelium.png";
+export { default as SwyftX } from "./SwyftX.png";
 export { default as Bridge } from "./Bridge.png";
 
 import { default as MeetupOne } from "./MeetupOne.png";
