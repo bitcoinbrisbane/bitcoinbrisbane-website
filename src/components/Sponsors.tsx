@@ -1,5 +1,5 @@
 import React from "react";
-import { DLTx, GPIB, Mycelium, SwyftX } from "../assets";
+import { BA, DLTx, GPIB, Mycelium, SwyftX } from "../assets";
 
 export const Sponsors: React.FC = () => (
   <section className="w-full mt-12 lg:mt-48 px-6 lg:pt-32">
@@ -47,7 +47,19 @@ export const Sponsors: React.FC = () => (
             events.
           </p>
         </div>
-
+        <div className="flex items-center gap-x-8">
+          <img
+            src={BA}
+            alt="Blockchain Australia logo"
+            className="hidden lg:block w-[10vw] relative bottom-8"
+          />
+          <p className="mb-6 lg:mb-12">
+            <span className="text-3xl lg:text-5xl">BLOCKCHAIN AUSTRALIA</span>
+            <br />
+            For their continual support of the Brisbane bitcoin and blockchain
+            communitiy and meetup events.
+          </p>
+        </div>
         <div className="flex items-center gap-x-8">
           <img
             src={Mycelium}
