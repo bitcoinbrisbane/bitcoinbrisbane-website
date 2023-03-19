@@ -12,9 +12,12 @@ Individual events can be sponsored.  All sponsors will be included on the Bitcoi
 
 ## Sponsors and previous sponsors
 
+* DLTx Labs
 * Blockchain Australia
 * Swyftx
 * Independent Reserve
+* Stacks
+* Proof of Search
 
 ## Meetup code of conduct  
 
