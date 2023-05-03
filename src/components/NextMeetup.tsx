@@ -11,26 +11,23 @@ export const NextMeetup: React.FC = () => (
       <div className="flex items-center justify-center w-full gap-x-4 lg:gap-x-10 lg:max-w-[50%]">
         <img
           src={Date}
-          alt="March 30th"
+          alt="May 22nd"
           className="w-[6vh] lg:w-[14vh] small-shadow"
         />
         <div className="lg:flex lg:flex-col">
           <h3 className="text-3xl lg:text-6xl leading-[1.5rem] relative top-1">
-            BITCOIN ORDINALS <br className="lg:hidden" />
-            AND NFT&apos;S
+            BITCOIN PIZZA DAY
           </h3>
           <div className="hidden lg:flex flex-col gap-y-4">
             <p className="mt-4 text-2xl">
-              Looking to connect with fellow enthusiasts of cryptocurrency,
-              non-fungible tokens (NFT&apos;s), and BTC ordinals? Then join
-              us for a meetup that explores the intersection of these exciting
-              new technologies!
+              On May 22, 2010, now known as Bitcoin Pizza Day, Laszlo Hanyecz
+              agreed to pay 10,000 Bitcoins for two delivered Papa John's pizzas!
             </p>
             <span className="block text-4xl">
-              6pm AEST | The Precinct |{" "}
+              5:30pm AEST | Boroughs Of New York |{" "}
               <a
                 className="underline underline-offset-4"
-                href="https://www.meetup.com/bitcoinbrisbane/"
+                href="https://www.meetup.com/bitcoinbrisbane/events/292717813/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -40,14 +37,14 @@ export const NextMeetup: React.FC = () => (
           </div>
           <div className="hidden lg:flex flex-col gap-y-4">
             <p className="mt-4 text-4xl">
-              Checkout our other events @  
+              Checkout our other events @
               <a
                 className="underline underline-offset-4"
                 href="https://www.meetup.com/bitcoinbrisbane/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-              meetup.com/bitcoinbrisbane
+                meetup.com/bitcoinbrisbane
               </a>
             </p>
           </div>
@@ -55,8 +52,8 @@ export const NextMeetup: React.FC = () => (
       </div>
       <p className="mt-4 leading-[1.2rem] lg:hidden">
         Looking to connect with fellow enthusiasts of cryptocurrency,
-        non-fungible tokens (NFT&apos;s), and BTC ordinals? Then join us for
-        a meetup that explores the intersection of these exciting new
+        non-fungible tokens (NFT&apos;s), and BTC ordinals? Then join us for a
+        meetup that explores the intersection of these exciting new
         technologies!
       </p>
       <div className="flex lg:hidden w-full items-center justify-end">
