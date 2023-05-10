@@ -19,7 +19,7 @@ export const Title: React.FC = () => (
         onClick={() =>
           // robots can still crawl javascript links so we don't lose SEO
           window.open(
-            "https://outlook.office365.com/owa/calendar/BitcoinBrisbane@bitcoinbrisbane.com.au/bookings/",
+            "https://outlook.office365.com/owa/calendar/DLTxPtyLtd@bitcoinbrisbane.com.au/bookings/",
             "_blank",
             "noopener noreferrer"
           )
