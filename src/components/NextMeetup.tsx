@@ -10,29 +10,29 @@ export const NextMeetup: React.FC = () => (
     <div className="w-full px-6 lg:px-12 mt-10 lg:mt-24 font-hand lg:flex">
       <div className="flex items-center justify-center w-full gap-x-4 lg:gap-x-10 lg:max-w-[50%]">
         <div className="mt-4 text-2xl lg:flex pr-4">
-          <p className="relative left-[3.8vw] z-50">May</p>
-          <p className="mt-4 text-2xl relative top-[3vw] font-hand">22</p>
+          <p className="relative left-[3.8vw] z-50">June</p>
+          <p className="mt-4 text-2xl relative top-[3vw] font-hand">28</p>
           <img
             src={Date}
-            alt="May 22nd"
+            alt="June 28th"
             className="w-[6vh] lg:w-[14vh] small-shadow z-40"
           />
         </div>
         <div className="lg:flex lg:flex-col">
           <h3 className="text-3xl lg:text-6xl leading-[1.5rem] relative top-1">
-            BITCOIN PIZZA DAY
+            THE OFFICIAL Blockchain Australia "Red Carpet" OPENING NIGHT with
+            DLTx Labs
           </h3>
           <div className="hidden lg:flex flex-col gap-y-4">
             <p className="mt-4 text-2xl">
-              On May 22, 2010, now known as Bitcoin Pizza Day, Laszlo Hanyecz
-              agreed to pay 10,000 Bitcoins for two delivered Papa John's
-              pizzas!
+              Reflecting on the PAST 10 years of BLOCKCHAIN & what to expect in
+              the NEXT 10 years.
             </p>
             <span className="block text-4xl">
-              5:30pm AEST | Boroughs Of New York |{" "}
+              6:30pm AEST | The Precinct |{" "}
               <a
                 className="underline underline-offset-4"
-                href="https://www.meetup.com/bitcoinbrisbane/events/292717813/"
+                href="https://www.meetup.com/bitcoinbrisbane/events/293340730/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
