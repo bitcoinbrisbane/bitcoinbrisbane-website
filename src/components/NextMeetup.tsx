@@ -1,82 +1,96 @@
-import React from "react";
-import { Date } from "../assets";
-import { Images } from "./Images";
+import axios from "axios";
+import {useEffect, useState} from "react";
 
-export const NextMeetup: React.FC = () => (
-  <section className="w-full mt-12 px-6">
-    <h2 className="font-black title text-5xl lg:text-9xl w-full text-center text-white">
-      NEXT MEETUP
-    </h2>
-    <div className="w-full px-6 lg:px-12 mt-10 lg:mt-24 font-hand lg:flex">
-      <div className="flex items-center justify-center w-full gap-x-4 lg:gap-x-10 lg:max-w-[50%]">
-        <div className="mt-4 text-2xl lg:flex pr-4">
-          <p className="relative left-[3.8vw] z-50">June</p>
-          <p className="mt-4 text-2xl relative top-[3vw] font-hand">28</p>
-          <img
-            src={Date}
-            alt="June 28th"
-            className="w-[6vh] lg:w-[14vh] small-shadow z-40"
-          />
-        </div>
-        <div className="lg:flex lg:flex-col">
-          <h3 className="text-3xl lg:text-6xl leading-[1.5rem] relative top-1">
-            THE OFFICIAL Blockchain Australia "Red Carpet" OPENING NIGHT with
-            DLTx Labs
-          </h3>
-          <div className="hidden lg:flex flex-col gap-y-4">
-            <p className="mt-4 text-2xl">
-              Reflecting on the PAST 10 years of BLOCKCHAIN & what to expect in
-              the NEXT 10 years.
-            </p>
-            <span className="block text-4xl">
-              6:30pm AEST | The Precinct |{" "}
-              <a
-                className="underline underline-offset-4"
-                href="https://www.meetup.com/bitcoinbrisbane/events/293340730/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                RSVP
-              </a>
-            </span>
-          </div>
-          <div className="hidden lg:flex flex-col gap-y-4">
-            <p className="mt-4 text-4xl">
-              Checkout our other events @
-              <a
-                className="underline underline-offset-4"
-                href="https://www.meetup.com/bitcoinbrisbane/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                meetup.com/bitcoinbrisbane
-              </a>
-            </p>
-          </div>
-        </div>
+export const NextMeetup = () => {
+  const [events, setEvents] = useState([]);
+  const [error, setError] = useState(null);
+
+  function convertDate(date){
+    const splitDate = date.split("-")
+    const finalDate = `${splitDate[2]}/${splitDate[1]}/${splitDate[0]}`
+
+    return finalDate
+  }
+
+  function convertTime(time){
+    const splitTime = time.split(":")
+    const finalTime = `${splitTime[0]}:${splitTime[1]}`
+
+    return finalTime
+  }
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:1337/api/events?populate=*")
+      .then(({data}) => {
+        setEvents(data.data);
+      })
+      .catch((error) => {
+        setError(error);
+      });
+  }, []);
+
+  if (error) {
+    return <div> An error occurred: {error.message}</div>;
+  }
+
+  return (
+    <section className="w-full mt-12 px-6">
+      <h2 className="font-black title text-5xl lg:text-9xl w-full text-center text-white">
+        NEXT MEETUP
+      </h2>
+      <div className="w-full mt-10 lg:mt-24 font-hand lg:flex">
+        <ul>
+          {events.toReversed().map((event) => (  
+            <li key={event.id} className="mt-12 lg:mt-36">
+              <div className="grid grid-cols-12 flex items-center justify-center w-full">
+                <div className="col-start-3 col-span-4 lg:flex lg:flex-col">
+                  <h3 className="text-3xl lg:text-6xl leading-[1.5rem] relative top-1">
+                    {event.attributes.name}
+                  </h3>
+                  <div className="hidden lg:flex flex-col gap-y-4">
+                    <p className="mt-4 text-2xl">
+                      {event.attributes.description}
+                    </p>
+                    <span className="block text-4xl text-red-700">
+                      {convertDate(event.attributes.date)} | {convertTime(event.attributes.time)} AEST | {event.attributes.venue} |{" "}
+                      <a
+                        className="underline underline-offset-4"
+                        href="https://www.meetup.com/bitcoinbrisbane/events/293340730/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        RSVP
+                      </a>
+                    </span>
+                  </div>
+                </div>
+                <div className="col-start-8 col-span-3">
+                  <img
+                    src={event.attributes.photo.data[0].attributes.formats.large.url}
+                    alt="meetup photo"
+                    className="rounded-xl"
+                  />
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
-      <p className="mt-4 leading-[1.2rem] lg:hidden">
-        Looking to connect with fellow enthusiasts of cryptocurrency,
-        non-fungible tokens (NFT&apos;s), and BTC ordinals? Then join us for a
-        meetup that explores the intersection of these exciting new
-        technologies!
-      </p>
-      <div className="flex lg:hidden w-full items-center justify-end">
-        <span className="block text-lg">
-          6pm AEST | The Precinct |{" "}
+      <div className="hidden lg:flex flex-col text-center">
+        <p className="mt-48 text-4xl font-hand ">
+          Checkout our other events @
           <a
-            className="underline underline-offset-2"
-            href="https://www.meetup.com/bitcoinbrisbane/events/291902672/"
+            className="underline underline-offset-4"
+            href="https://www.meetup.com/bitcoinbrisbane/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Link
+            meetup.com/bitcoinbrisbane
           </a>
-        </span>
-      </div>
-      <div className="hidden lg:block max-w-[50%]">
-        <Images />
-      </div>
-    </div>
-  </section>
-);
+        </p>
+        </div>
+    </section>
+  );
+};
+
