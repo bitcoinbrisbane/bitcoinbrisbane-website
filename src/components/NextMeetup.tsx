@@ -56,7 +56,7 @@ export const NextMeetup = () => {
                       {convertDate(event.attributes.date)} | {convertTime(event.attributes.time)} AEST | {event.attributes.venue} |{" "}
                       <a
                         className="underline underline-offset-4"
-                        href="https://www.meetup.com/bitcoinbrisbane/events/293340730/"
+                        href="https://www.meetup.com/bitcoinbrisbane/"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
