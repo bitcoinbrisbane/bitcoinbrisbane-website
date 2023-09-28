@@ -6,17 +6,17 @@ export const NextMeetup = () => {
   const [error, setError] = useState(null);
 
   function convertDate(date){
-    const splitDate = date.split("-")
-    const finalDate = `${splitDate[2]}/${splitDate[1]}/${splitDate[0]}`
+    const splitDate = date.split("-");
+    const finalDate = `${splitDate[2]}/${splitDate[1]}/${splitDate[0]}`;
 
-    return finalDate
+    return finalDate;
   };
 
   function convertTime(time){
-    const splitTime = time.split(":")
-    const finalTime = `${splitTime[0]}:${splitTime[1]}`
+    const splitTime = time.split(":");
+    const finalTime = `${splitTime[0]}:${splitTime[1]}`;
 
-    return finalTime
+    return finalTime;
   };
 
   useEffect(() => {
