@@ -10,14 +10,14 @@ export const NextMeetup = () => {
     const finalDate = `${splitDate[2]}/${splitDate[1]}/${splitDate[0]}`
 
     return finalDate
-  }
+  };
 
   function convertTime(time){
     const splitTime = time.split(":")
     const finalTime = `${splitTime[0]}:${splitTime[1]}`
 
     return finalTime
-  }
+  };
 
   useEffect(() => {
     axios
@@ -32,7 +32,7 @@ export const NextMeetup = () => {
 
   if (error) {
     return <div> An error occurred: {error.message}</div>;
-  }
+  };
 
   return (
     <section className="w-full mt-12 px-6">
