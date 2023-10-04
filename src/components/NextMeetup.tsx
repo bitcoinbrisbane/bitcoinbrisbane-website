@@ -5,14 +5,14 @@ export const NextMeetup = () => {
   const [events, setEvents] = useState([]);
   const [error, setError] = useState(null);
 
-  function convertDate(date){
+  function convertDate(date: string){
     const splitDate = date.split("-");
     const finalDate = `${splitDate[2]}/${splitDate[1]}/${splitDate[0]}`;
 
     return finalDate;
   };
 
-  function convertTime(time){
+  function convertTime(time: string){
     const splitTime = time.split(":");
     const finalTime = `${splitTime[0]}:${splitTime[1]}`;
 
@@ -21,11 +21,11 @@ export const NextMeetup = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:1337/api/events?populate=*")
+      .get("http://cms.dltx.io/api/events?populate=*")
       .then(({data}) => {
         setEvents(data.data);
       })
-      .catch((error) => {
+      .catch((error: any) => {
         setError(error);
       });
   }, []);
