@@ -30,19 +30,19 @@ type MeetupEvent = {
 export const NextMeetup = () => {
   const [events, setEvents] = useState<any[]>();
 
-  function convertDate(date: string) {
+  const convertDate = (date: string) => {
     const splitDate = date.split("-");
     const finalDate = `${splitDate[2]}/${splitDate[1]}/${splitDate[0]}`;
 
     return finalDate;
-  }
+  };
 
-  function convertTime(time: string) {
+  const convertTime = (time: string) => {
     const splitTime = time.split(":");
     const finalTime = `${splitTime[0]}:${splitTime[1]}`;
 
     return finalTime;
-  }
+  };
 
   useEffect(() => {
     axios
