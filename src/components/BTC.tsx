@@ -3,21 +3,22 @@ import { Button } from "./Button";
 import axios from "axios";
 
 export const BTC: React.FC = () => {
-
-const [price, setPrice] = useState("0");
+  const [price, setPrice] = useState("0");
 
   useEffect(() => {
     const fetchBitcoinPrice = async () => {
       try {
-        const response = await axios.get('https://api.coindesk.com/v1/bpi/currentprice.json');
+        const response = await axios.get(
+          "https://api.coindesk.com/v1/bpi/currentprice.json"
+        );
         setPrice(response.data.bpi.USD.rate);
       } catch (error) {
         console.error(error);
       }
-    }
+    };
     fetchBitcoinPrice();
   }, []);
-  
+
   return (
     <div className="flex lg:absolute lg:bottom-24 items-center justify-end mt-8 px-6 lg:px-0 lg:pl-16">
       <div className="flex flex-col items-end relative z-50">
@@ -28,4 +29,4 @@ const [price, setPrice] = useState("0");
       </div>
     </div>
   );
-}
+};

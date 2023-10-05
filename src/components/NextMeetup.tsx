@@ -1,38 +1,58 @@
 import axios from "axios";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
+
+type MeetupEvent = {
+  data: [{
+    id: string;
+    attributes: {
+      name: string;
+      description: string;
+      date: string;
+      time: string;
+      venue: string;
+      photo: {
+        data: {
+          attributes: {
+            formats: {
+              large: {
+                url: string;
+              };
+            };
+          };
+        }[];
+      };
+    };
+  }];
+};
 
 export const NextMeetup = () => {
-  const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState<any[]>();
   const [error, setError] = useState(null);
 
-  function convertDate(date){
+  function convertDate(date: string) {
     const splitDate = date.split("-");
     const finalDate = `${splitDate[2]}/${splitDate[1]}/${splitDate[0]}`;
 
     return finalDate;
-  };
+  }
 
-  function convertTime(time){
+  function convertTime(time: string) {
     const splitTime = time.split(":");
     const finalTime = `${splitTime[0]}:${splitTime[1]}`;
 
     return finalTime;
-  };
+  }
 
   useEffect(() => {
     axios
-      .get("http://localhost:1337/api/events?populate=*")
-      .then(({data}) => {
+      .get<MeetupEvent>("http://cms.dltx.io/api/events?populate=*")
+      .then(({ data }) => {
         setEvents(data.data);
       })
-      .catch((error) => {
+      .catch((error: any) => {
         setError(error);
       });
   }, []);
-
-  if (error) {
-    return <div> An error occurred: {error.message}</div>;
-  };
 
   return (
     <section className="w-full mt-12 px-6">
@@ -41,7 +61,7 @@ export const NextMeetup = () => {
       </h2>
       <div className="w-full mt-10 lg:mt-24 font-hand lg:flex">
         <ul>
-          {events.toReversed().map((event) => (  
+          {events?.toReversed().map(event => (
             <li key={event.id} className="mt-12 lg:mt-36">
               <div className="grid grid-cols-12 flex items-center justify-center w-full">
                 <div className="col-start-3 col-span-4 lg:flex lg:flex-col">
@@ -53,7 +73,9 @@ export const NextMeetup = () => {
                       {event.attributes.description}
                     </p>
                     <span className="block text-4xl text-red-700">
-                      {convertDate(event.attributes.date)} | {convertTime(event.attributes.time)} AEST | {event.attributes.venue} |{" "}
+                      {convertDate(event.attributes.date)} |{" "}
+                      {convertTime(event.attributes.time)} AEST |{" "}
+                      {event.attributes.venue} |{" "}
                       <a
                         className="underline underline-offset-4"
                         href="https://www.meetup.com/bitcoinbrisbane/"
@@ -67,7 +89,10 @@ export const NextMeetup = () => {
                 </div>
                 <div className="col-start-8 col-span-3">
                   <img
-                    src={event.attributes.photo.data[0].attributes.formats.large.url}
+                    src={
+                      event.attributes.photo.data[0].attributes.formats.large
+                        .url
+                    }
                     alt="meetup photo"
                     className="rounded-xl"
                   />
@@ -89,8 +114,7 @@ export const NextMeetup = () => {
             meetup.com/bitcoinbrisbane
           </a>
         </p>
-        </div>
+      </div>
     </section>
   );
 };
-
