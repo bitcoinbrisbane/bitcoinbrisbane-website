@@ -54,10 +54,6 @@ export const NextMeetup = () => {
       });
   }, []);
 
-  if (error) {
-    return <div> An error occurred: {error.message}</div>;
-  }
-
   return (
     <section className="w-full mt-12 px-6">
       <h2 className="font-black title text-5xl lg:text-9xl w-full text-center text-white">
@@ -65,7 +61,7 @@ export const NextMeetup = () => {
       </h2>
       <div className="w-full mt-10 lg:mt-24 font-hand lg:flex">
         <ul>
-          {events.toReversed().map(event => (
+          {events?.toReversed().map(event => (
             <li key={event.id} className="mt-12 lg:mt-36">
               <div className="grid grid-cols-12 flex items-center justify-center w-full">
                 <div className="col-start-3 col-span-4 lg:flex lg:flex-col">
