@@ -15,7 +15,7 @@ export const Title: React.FC = () => (
     </h2>
     <div className="mt-4 lg:mt-10 lg:pl-[5%] lg:w-full">
       <Button
-        title="BOOK A CONSULTATION WITH DLTX"
+        title="BOOK A CONSULTATION WITH DLTx"
         onClick={() =>
           // robots can still crawl javascript links so we don't lose SEO
           window.open(
