@@ -2,32 +2,33 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 type MeetupEvent = {
-  data: [{
-    id: string;
-    attributes: {
-      name: string;
-      description: string;
-      date: string;
-      time: string;
-      venue: string;
-      photo: {
-        data: {
-          attributes: {
-            formats: {
-              large: {
-                url: string;
+  data: [
+    {
+      id: string;
+      attributes: {
+        name: string;
+        description: string;
+        date: string;
+        time: string;
+        venue: string;
+        photo: {
+          data: {
+            attributes: {
+              formats: {
+                large: {
+                  url: string;
+                };
               };
             };
-          };
-        }[];
+          }[];
+        };
       };
-    };
-  }];
+    }
+  ];
 };
 
 export const NextMeetup = () => {
   const [events, setEvents] = useState<any[]>();
-  const [error, setError] = useState(null);
 
   function convertDate(date: string) {
     const splitDate = date.split("-");
@@ -50,7 +51,7 @@ export const NextMeetup = () => {
         setEvents(data.data);
       })
       .catch((error: any) => {
-        setError(error);
+        console.log(error);
       });
   }, []);
 
@@ -61,7 +62,7 @@ export const NextMeetup = () => {
       </h2>
       <div className="w-full mt-10 lg:mt-24 font-hand lg:flex">
         <ul>
-          {events?.toReversed().map(event => (
+          {events?.map(event => (
             <li key={event.id} className="mt-12 lg:mt-36">
               <div className="grid grid-cols-12 flex items-center justify-center w-full">
                 <div className="col-start-3 col-span-4 lg:flex lg:flex-col">
