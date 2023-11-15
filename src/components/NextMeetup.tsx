@@ -97,10 +97,7 @@ export const NextMeetup = () => {
                 </div>
                 <div className="col-start-8 col-span-3">
                   <img
-                    src={
-                      event.attributes.photo.data[0].attributes.formats.large
-                        .url
-                    }
+                    src={`https://cms.dltx.io${event.attributes.photo.data[0].attributes.formats.large.url}`}
                     alt="meetup photo"
                     className="rounded-xl"
                   />
