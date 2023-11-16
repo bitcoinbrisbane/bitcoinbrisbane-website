@@ -1,78 +1,67 @@
-import React from "react";
-import { BA, DLTx, GPIB, Mycelium, SwyftX } from "../assets";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
-export const Sponsors: React.FC = () => (
-  <section className="w-full mt-12 lg:mt-48 px-6 lg:pt-32">
-    <h2 className="font-black title text-5xl lg:text-9xl w-full text-center text-white">
-      SPONSORS
-    </h2>
-    <div className="w-full flex flex-col items-center font-hand mt-6 lg:mt-12 lg:text-xl">
-      <div className="w-fit pb-12 lg:pb-32">
-        <div className="flex items-center gap-x-8">
-          <img
-            src={DLTx}
-            alt="DLTx Labs logo"
-            className="hidden lg:block w-[10vw] scale-[0.5] relative bottom-8"
-          />
-          <p className="mb-6 lg:mb-12">
-            <span className="text-3xl lg:text-5xl">DLTx LABS</span>
-            <br />
-            Brisbane&apos;s best blockchain venture studio for their support and
-            Ledger Hardware Wallet door prizes!
-          </p>
-        </div>
-        <div className="flex items-center gap-x-8">
-          <img
-            src={GPIB}
-            alt="Get Paid In Bitcoin"
-            className="hidden lg:block w-[10vw] scale-[0.5] relative bottom-8"
-          />
-          <p className="mb-6 lg:mb-12">
-            <span className="text-3xl lg:text-5xl">GET PAID IN BITCOIN</span>
-            <br />
-            The easiest way to stack stats.
-          </p>
-        </div>
-        <div className="flex items-center gap-x-8">
-          <img
-            src={SwyftX}
-            alt="SwyftX logo"
-            className="hidden lg:block w-[10vw] relative bottom-8"
-          />
-          <p className="mb-6 lg:mb-12">
-            <span className="text-3xl lg:text-5xl">SWYFTX</span>
-            <br />
-            Australia&apos;s favourite exchange SwyftX for their continual
-            support of the Brisbane bitcoin and blockchain communitiy and meetup
-            events.
-          </p>
-        </div>
-        <div className="flex items-center gap-x-8">
-          <img
-            src={BA}
-            alt="Blockchain Australia logo"
-            className="hidden lg:block w-[10vw] relative bottom-8"
-          />
-          <p className="mb-6 lg:mb-12">
-            <span className="text-3xl lg:text-5xl">BLOCKCHAIN AUSTRALIA</span>
-            <br />
-            For their continual support of the Brisbane bitcoin and blockchain
-            communitiy and meetup events.
-          </p>
-        </div>
-        <div className="flex items-center gap-x-8">
-          <img
-            src={Mycelium}
-            alt="Mycelium logo"
-            className="hidden lg:block w-[10vw] relative bottom-2"
-          />
-          <p>
-            <span className="text-3xl lg:text-5xl">MYCELIUM VENTURES</span>
-            <br />
-            Rewriting the rules of engagement so they are fair forever.
-          </p>
+type Sponsor = {
+  data: [
+    {
+      id: string;
+      attributes: {
+        name: string;
+        description: string;
+        logo: {
+          data: {
+            attributes: {
+              url: string;
+            };
+          };
+        }[];
+      };
+    }
+  ];
+};
+
+export const Sponsors = () => {
+  const [sponsors, setSponsors] = useState<any[]>();
+
+  useEffect(() => {
+    axios
+      .get<Sponsor>("https://cms.dltx.io/api/sponsors?populate=*")
+      .then(({ data }) => {
+        setSponsors(data.data);
+      })
+      .catch((error: any) => {
+        console.log(error);
+      });
+  }, []);
+
+  return (
+    <section className="w-full mt-12 lg:mt-48 px-6 lg:pt-32">
+      <h2 className="font-black title text-5xl lg:text-9xl w-full text-center text-white">
+        SPONSORS
+      </h2>
+      <div className="w-full flex flex-col items-center font-hand mt-6 lg:mt-12 lg:text-xl">
+        <div className="w-fit pb-12 lg:pb-32">
+          {sponsors?.map(sponsor => (
+            <div
+              key={sponsor.attributes.name}
+              className="flex items-center gap-x-8"
+            >
+              <img
+                src={`https://cms.dltx.io${sponsor.attributes.logo?.data.attributes.url}`}
+                alt={sponsor.attributes.name}
+                className="hidden lg:block w-[10vw] scale-[0.5] relative bottom-8"
+              />
+              <p className="mb-6 lg:mb-12">
+                <span className="text-3xl lg:text-5xl">
+                  {sponsor.attributes.name}
+                </span>
+                <br />
+                {sponsor.attributes.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
