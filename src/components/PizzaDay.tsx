@@ -9,8 +9,7 @@ export const PizzaDay: React.FC = () => (
       <div className="flex items-center justify-center w-full gap-x-4 lg:gap-x-10 lg:max-w-[50%]">
         <div className="lg:flex lg:flex-col">
           <h3 className="text-3xl lg:text-6xl leading-[1.5rem] relative top-1">
-            BITCOIN ORDINALS <br className="lg:hidden" />
-            AND NFT&apos;S
+            May 22nd
           </h3>
         </div>
       </div>

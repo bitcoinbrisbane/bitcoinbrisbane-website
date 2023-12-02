@@ -1,9 +1,9 @@
 import React from "react";
-import { MEETUPS } from "../assets";
 
 export const Images: React.FC = () => (
   <div className="w-full ml-[10vw]">
-    <img src={MEETUPS.one} alt="Meetup One" className="absolute" />
+    {/* call cms */}
+    {/* <img src={MEETUPS.one} alt="Meetup One" className="absolute" />
     <img
       src={MEETUPS.two}
       alt="Meetup Two"
@@ -18,6 +18,6 @@ export const Images: React.FC = () => (
       src={MEETUPS.four}
       alt="Meetup Four"
       className="absolute ml-[9rem] mt-[9rem]"
-    />
+    /> */}
   </div>
 );
