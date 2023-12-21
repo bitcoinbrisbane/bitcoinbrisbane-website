@@ -20,6 +20,11 @@ type Sponsor = {
   ];
 };
 
+const getPinataUrl = (deepLink: string):string => {
+  deepLink = deepLink.trimStart("https://");
+  return "https://gateway.pinata.cloud/ipfs/" + deepLink.split["."][0];
+};
+
 export const Sponsors = () => {
   const [sponsors, setSponsors] = useState<any[]>();
 
@@ -47,7 +52,7 @@ export const Sponsors = () => {
               className="flex items-center gap-x-8"
             >
               <img
-                src="https://gateway.pinata.cloud/ipfs/bafkreie6nmkk52tajll73557uwghutjm7ritp2esceiwj2ygzcncmsgu5m"
+                src={getPinataUrl(sponsor.attributes.logo?.data.attributes.ur)}
                 alt={sponsor.attributes.name}
                 className="hidden lg:block w-[10vw] scale-[0.5] relative bottom-8"
               />
