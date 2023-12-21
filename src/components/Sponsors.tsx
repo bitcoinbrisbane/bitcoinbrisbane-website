@@ -47,7 +47,7 @@ export const Sponsors = () => {
               className="flex items-center gap-x-8"
             >
               <img
-                src={`{sponsor.attributes.logo?.data.attributes.url}`}
+                src={sponsor.attributes.logo?.data.attributes.url}
                 alt={sponsor.attributes.name}
                 className="hidden lg:block w-[10vw] scale-[0.5] relative bottom-8"
               />
