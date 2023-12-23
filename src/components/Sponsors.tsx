@@ -20,12 +20,6 @@ type Sponsor = {
   ];
 };
 
-const getPinataUrl = (deepLink: string): string => {
-  // trip https:// from the start and .ipfs.dweb.link from the end
-  deepLink = deepLink.substring(8, deepLink.length - 17);
-  return "https://gateway.pinata.cloud/ipfs/" + deepLink;
-};
-
 export const Sponsors = () => {
   const [sponsors, setSponsors] = useState<any[]>();
 
