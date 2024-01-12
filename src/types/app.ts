@@ -9,4 +9,30 @@ export type AppRoute = {
   props?: RouteProps;
 };
 
+export type MeetupEvent = {
+  data: [
+    {
+      id: string;
+      attributes: {
+        name: string;
+        description: string;
+        date: string;
+        time: string;
+        venue: string;
+        photo: {
+          data: {
+            attributes: {
+              formats: {
+                large: {
+                  url: string;
+                };
+              };
+            };
+          }[];
+        };
+      };
+    }
+  ];
+};
+
 export type AppRoutes = Array<AppRoute>;

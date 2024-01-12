@@ -1,31 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-
-type MeetupEvent = {
-  data: [
-    {
-      id: string;
-      attributes: {
-        name: string;
-        description: string;
-        date: string;
-        time: string;
-        venue: string;
-        photo: {
-          data: {
-            attributes: {
-              formats: {
-                large: {
-                  url: string;
-                };
-              };
-            };
-          }[];
-        };
-      };
-    }
-  ];
-};
+import { MeetupEvent } from "../types/app";
 
 export const NextMeetup = () => {
   const [events, setEvents] = useState<any[]>();
@@ -74,16 +49,16 @@ export const NextMeetup = () => {
               <div className="grid grid-cols-12 flex items-center justify-center w-full">
                 <div className="col-start-3 col-span-4 lg:flex lg:flex-col">
                   <h3 className="text-3xl lg:text-6xl leading-[1.5rem] relative top-1">
-                    {event.attributes.name}
+                    {event.attributes?.name}
                   </h3>
                   <div className="hidden lg:flex flex-col gap-y-4">
                     <p className="mt-4 text-2xl">
-                      {event.attributes.description}
+                      {event.attributes?.description}
                     </p>
                     <span className="block text-4xl text-red-700">
-                      {convertDate(event.attributes.date)} |{" "}
-                      {convertTime(event.attributes.time)} AEST |{" "}
-                      {event.attributes.venue} |{" "}
+                      {convertDate(event.attributes?.date)} |{" "}
+                      {convertTime(event.attributes?.time)} AEST |{" "}
+                      {event.attributes?.venue} |{" "}
                       <a
                         className="underline underline-offset-4"
                         href="https://www.meetup.com/bitcoinbrisbane/"
@@ -95,13 +70,15 @@ export const NextMeetup = () => {
                     </span>
                   </div>
                 </div>
-                <div className="col-start-8 col-span-3">
-                  <img
-                    src={`https://cms.dltx.io${event.attributes.photo.data[0].attributes.formats.large.url}`}
-                    alt="meetup photo"
-                    className="rounded-xl"
-                  />
-                </div>
+                {event.attributes?.photo?.data !== "null" || (
+                  <div className="col-start-8 col-span-3">
+                    <img
+                      src={`https://cms.dltx.io${event.attributes.photo.data[0].attributes.formats.large.url}`}
+                      alt={event.attributes.name}
+                      className="rounded-xl"
+                    />
+                  </div>
+                )}
               </div>
             </li>
           ))}
