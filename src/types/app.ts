@@ -35,4 +35,23 @@ export type MeetupEvent = {
   ];
 };
 
+export type Sponsor = {
+  data: [
+    {
+      id: string;
+      attributes: {
+        name: string;
+        description: string;
+        logo: {
+          data: {
+            attributes: {
+              url: string;
+            };
+          };
+        }[];
+      };
+    }
+  ];
+};
+
 export type AppRoutes = Array<AppRoute>;

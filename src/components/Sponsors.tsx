@@ -1,24 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-
-type Sponsor = {
-  data: [
-    {
-      id: string;
-      attributes: {
-        name: string;
-        description: string;
-        logo: {
-          data: {
-            attributes: {
-              url: string;
-            };
-          };
-        }[];
-      };
-    }
-  ];
-};
+import { Sponsor } from "../types/app";
 
 export const Sponsors = () => {
   const [sponsors, setSponsors] = useState<any[]>();
