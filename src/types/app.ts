@@ -9,30 +9,30 @@ export type AppRoute = {
   props?: RouteProps;
 };
 
+export type MeetupResponse = {
+  data: MeetupEvent[];
+};
+
 export type MeetupEvent = {
-  data: [
-    {
-      id: string;
-      attributes: {
-        name: string;
-        description: string;
-        date: string;
-        time: string;
-        venue: string;
-        photo: {
-          data: {
-            attributes: {
-              formats: {
-                large: {
-                  url: string;
-                };
-              };
+  id: string;
+  attributes: {
+    name: string;
+    description: string;
+    date: string;
+    time: string;
+    venue: string;
+    photo: {
+      data: {
+        attributes: {
+          formats: {
+            large: {
+              url: string;
             };
-          }[];
+          };
         };
-      };
-    }
-  ];
+      }[];
+    };
+  };
 };
 
 export type Sponsor = {
