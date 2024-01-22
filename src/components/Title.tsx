@@ -11,7 +11,7 @@ export const Title: React.FC = () => (
     <h2 className="font-semibold subtitle text-lg lg:text-4xl w-full text-center lg:text-left leading-[1.2rem] mt-4">
       BRISBANE&apos;S OLDEST BLOCKCHAIN AND
       <br />
-      BITCOIN COMMUNITY GROUP
+      BITCOIN COMMUNITY GROUP SINCE BLOCK #231658
     </h2>
     <div className="mt-4 lg:mt-10 lg:pl-[5%] lg:w-full">
       <Button

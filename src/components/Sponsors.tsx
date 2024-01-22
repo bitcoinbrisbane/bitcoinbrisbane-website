@@ -1,36 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-
-type Sponsor = {
-  data: [
-    {
-      id: string;
-      attributes: {
-        name: string;
-        description: string;
-        logo: {
-          data: {
-            attributes: {
-              url: string;
-            };
-          };
-        }[];
-      };
-    }
-  ];
-};
-
-const getPinataUrl = (deepLink: string): string => {
-  if (!deepLink) return "";
-
-  if (deepLink.startsWith("https://") && deepLink.endsWith(".ipfs.dweb.link")) {
-    // trip https:// from the start and .ipfs.dweb.link from the end
-    deepLink = deepLink.substring(8, deepLink.length - 17);
-    return "https://gateway.pinata.cloud/ipfs/" + deepLink;
-  }
-
-  return deepLink;
-};
+import { Sponsor } from "../types/app";
 
 export const Sponsors = () => {
   const [sponsors, setSponsors] = useState<any[]>();
@@ -59,7 +29,7 @@ export const Sponsors = () => {
               className="flex items-center gap-x-8"
             >
               <img
-                src={getPinataUrl(sponsor.attributes.logo?.data.attributes.ur)}
+                src={sponsor.attributes.logo?.data.attributes.ur}
                 alt={sponsor.attributes.name}
                 className="hidden lg:block w-[10vw] scale-[0.5] relative bottom-8"
               />
