@@ -16,6 +16,10 @@ export const Sponsors = () => {
       });
   }, []);
 
+  const getLogo = (sponsor: any) => {
+    return sponsor.attributes.logo?.data?.attributes?.formats?.thumbnail?.url;
+  }
+
   return (
     <section className="w-full mt-12 lg:mt-48 px-6 lg:pt-32">
       <h2 className="font-black title text-5xl lg:text-9xl w-full text-center text-white">
@@ -29,7 +33,7 @@ export const Sponsors = () => {
               className="flex items-center gap-x-8"
             >
               <img
-                src={sponsor.attributes.logo?.data.attributes.ur}
+                src={getLogo(sponsor)}
                 alt={sponsor.attributes.name}
                 className="hidden lg:block w-[10vw] scale-[0.5] relative bottom-8"
               />
