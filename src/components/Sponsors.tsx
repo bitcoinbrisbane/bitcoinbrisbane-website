@@ -21,7 +21,7 @@ export const Sponsors = () => {
   }
 
   return (
-    <section className="w-full mt-12 lg:mt-48 px-6 lg:pt-32">
+    <section className="w-full mt-12 lg:mt-48 px-6 md:pt-24">
       <h2 className="font-black title text-5xl lg:text-9xl w-full text-center text-white">
         SPONSORS
       </h2>
@@ -35,7 +35,7 @@ export const Sponsors = () => {
               <img
                 src={getLogo(sponsor)}
                 alt={sponsor.attributes.name}
-                className="hidden lg:block w-[10vw] scale-[0.5] relative bottom-8"
+                className="block md:w-[15rem] w-[5rem] scale-[0.8] relative bottom-8"
               />
               <p className="mb-6 lg:mb-12">
                 <span className="text-3xl lg:text-5xl">
