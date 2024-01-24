@@ -2,10 +2,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { MeetupEvent, MeetupResponse } from "../types/app";
 import dayjs from "dayjs";
+import Marquee from "react-fast-marquee";
 
 export const NextMeetup = () => {
   const [event, setEvent] = useState<MeetupEvent>();
-
   const convertDateAndTime = (
     date: any,
     time: any,
@@ -16,6 +16,15 @@ export const NextMeetup = () => {
     const finalDate = dayjs(`${date} ${time}`).format(format);
     return finalDate;
   };
+
+  const pastEventImageUrls = [
+    "https://bafybeibthopyr5u3txthpwblottoxnp3hiddrvdafz2yk2m4qgl5prs6ru.ipfs.dweb.link/",
+    "https://bafybeibhvh6qwznkwcqc5rwgljrvvbs733youhn53d2h3y4mwxc33mogem.ipfs.dweb.link/",
+    "https://bafybeiaqwbqi76zca3so72xksop7flljm6zcqgdod7fg5o5b5am5tjzrje.ipfs.dweb.link/",
+    "https://bafybeidxjf5oc3ho6pgqvmtofoye7pqhq7eeohq2af2jmwhk6kmrpzinva.ipfs.dweb.link/",
+    "https://sgp1.digitaloceanspaces.com/cms.dltx.io/7adea14177b41930ae385aa65425dce3.jpg",
+    "https://bafybeidgem5sjv4frkoi622gfbmrfwgreofkc7vekyjjvv4ieris5anh74.ipfs.dweb.link",
+  ];
 
   useEffect(() => {
     axios
@@ -40,17 +49,17 @@ export const NextMeetup = () => {
       <h2 className="font-black title text-5xl lg:text-9xl w-full text-center text-white">
         NEXT MEETUP
       </h2>
-      <div className="w-full mt-10 lg:mt-24 font-hand lg:flex">
-        <div className="grid grid-cols-12 flex items-center justify-center w-full">
-          <div className="col-start-3 col-span-9 lg:flex lg:flex-col">
+      <div className="w-full mt-10 lg:mt-24 font-hand flex">
+        <div className="grid grid-cols-12 items-center justify-center w-full">
+          <div className="md:col-start-3 md:col-span-9 flex flex-col col-start-2 col-span-10">
             <h3 className="text-3xl lg:text-6xl leading-[1.5rem] relative top-1">
               {event?.attributes?.name}
             </h3>
           </div>
-          <div className="col-start-3 col-span-4 lg:flex lg:flex-col">
-            <div className="hidden lg:flex flex-col gap-y-4">
+          <div className="md:col-start-3 md:col-span-4 flex flex-col col-start-2 col-span-10">
+            <div className="flex flex-col gap-y-4">
               <p className="mt-4 text-2xl">{event?.attributes?.description}</p>
-              <span className="block text-4xl text-red-700">
+              <span className="block md:text-4xl text-red-700">
                 {convertDateAndTime(
                   event?.attributes?.date,
                   event?.attributes?.time,
@@ -84,8 +93,8 @@ export const NextMeetup = () => {
               )} */}
         </div>
       </div>
-      <div className="hidden lg:flex flex-col text-center">
-        <p className="mt-48 text-4xl font-hand ">
+      <div className="flex flex-col text-center">
+        <p className="mt-48 md:text-4xl text-xl font-hand">
           Checkout our other events @
           <a
             className="underline underline-offset-4"
@@ -97,6 +106,22 @@ export const NextMeetup = () => {
           </a>
         </p>
       </div>
+
+      {/* Carousel of past event images */}
+      { pastEventImageUrls.length > 0 && (
+        <div className="flex flex-col text-center">
+          <Marquee speed={82}>
+            {pastEventImageUrls.map((imageUrl) => (
+              <img
+                src={imageUrl}
+                alt="past event image"
+                className="md:h-[20rem] object-cover rounded-xl m-2 h-[8rem]"
+              />
+            ))}
+          </Marquee> 
+        </div>
+      )}
+      
     </section>
   );
 };
