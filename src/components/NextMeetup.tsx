@@ -49,17 +49,17 @@ export const NextMeetup = () => {
       <h2 className="font-black title text-5xl lg:text-9xl w-full text-center text-white">
         NEXT MEETUP
       </h2>
-      <div className="w-full mt-10 lg:mt-24 font-hand lg:flex">
-        <div className="grid grid-cols-12 flex items-center justify-center w-full">
-          <div className="col-start-3 col-span-9 lg:flex lg:flex-col">
+      <div className="w-full mt-10 lg:mt-24 font-hand flex">
+        <div className="grid grid-cols-12 items-center justify-center w-full">
+          <div className="md:col-start-3 md:col-span-9 flex flex-col col-start-2 col-span-10">
             <h3 className="text-3xl lg:text-6xl leading-[1.5rem] relative top-1">
               {event?.attributes?.name}
             </h3>
           </div>
-          <div className="col-start-3 col-span-4 lg:flex lg:flex-col">
-            <div className="hidden lg:flex flex-col gap-y-4">
+          <div className="md:col-start-3 md:col-span-4 flex flex-col col-start-2 col-span-10">
+            <div className="flex flex-col gap-y-4">
               <p className="mt-4 text-2xl">{event?.attributes?.description}</p>
-              <span className="block text-4xl text-red-700">
+              <span className="block md:text-4xl text-red-700">
                 {convertDateAndTime(
                   event?.attributes?.date,
                   event?.attributes?.time,
@@ -93,8 +93,8 @@ export const NextMeetup = () => {
               )} */}
         </div>
       </div>
-      <div className="hidden lg:flex flex-col text-center">
-        <p className="mt-48 text-4xl font-hand ">
+      <div className="flex flex-col text-center">
+        <p className="mt-48 md:text-4xl text-xl font-hand">
           Checkout our other events @
           <a
             className="underline underline-offset-4"
@@ -115,12 +115,11 @@ export const NextMeetup = () => {
               <img
                 src={imageUrl}
                 alt="past event image"
-                className="h-[20rem] object-cover rounded-xl m-2"
+                className="md:h-[20rem] object-cover rounded-xl m-2 h-[8rem]"
               />
             ))}
           </Marquee> 
         </div>
-        
       )}
       
     </section>
