@@ -2,10 +2,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { MeetupEvent, MeetupResponse } from "../types/app";
 import dayjs from "dayjs";
+import Marquee from "react-fast-marquee";
 
 export const NextMeetup = () => {
   const [event, setEvent] = useState<MeetupEvent>();
-
   const convertDateAndTime = (
     date: any,
     time: any,
@@ -16,6 +16,15 @@ export const NextMeetup = () => {
     const finalDate = dayjs(`${date} ${time}`).format(format);
     return finalDate;
   };
+
+  const pastEventImageUrls = [
+    "https://bafybeibthopyr5u3txthpwblottoxnp3hiddrvdafz2yk2m4qgl5prs6ru.ipfs.dweb.link/",
+    "https://bafybeibhvh6qwznkwcqc5rwgljrvvbs733youhn53d2h3y4mwxc33mogem.ipfs.dweb.link/",
+    "https://bafybeiaqwbqi76zca3so72xksop7flljm6zcqgdod7fg5o5b5am5tjzrje.ipfs.dweb.link/",
+    "https://bafybeidxjf5oc3ho6pgqvmtofoye7pqhq7eeohq2af2jmwhk6kmrpzinva.ipfs.dweb.link/",
+    "https://sgp1.digitaloceanspaces.com/cms.dltx.io/7adea14177b41930ae385aa65425dce3.jpg",
+    "https://bafybeidgem5sjv4frkoi622gfbmrfwgreofkc7vekyjjvv4ieris5anh74.ipfs.dweb.link",
+  ];
 
   useEffect(() => {
     axios
@@ -97,6 +106,23 @@ export const NextMeetup = () => {
           </a>
         </p>
       </div>
+
+      {/* Carousel of past event images */}
+      { pastEventImageUrls.length > 0 && (
+        <div className="flex flex-col text-center">
+          <Marquee speed={82}>
+            {pastEventImageUrls.map((imageUrl) => (
+              <img
+                src={imageUrl}
+                alt="past event image"
+                className="h-[20rem] object-cover rounded-xl m-2"
+              />
+            ))}
+          </Marquee> 
+        </div>
+        
+      )}
+      
     </section>
   );
 };
