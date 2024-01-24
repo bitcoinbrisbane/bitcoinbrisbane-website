@@ -1,11 +1,11 @@
 import React from "react";
 
 export const Footer: React.FC = () => (
-  <section className="w-full mt-12 lg:mt-16 px-6 lg:pt-32">
-    <div className="w-full flex flex-col items-center font-hand mt-6 lg:mt-12 lg:text-xl">
-      <div className="w-fit pb-12 lg:pb-32">
+  <section className="w-full md:mt-12 lg:mt-16 px-6">
+    <div className="w-full flex flex-col items-center font-hand mt-6 lg:mt-12 md:text-2xl text-md">
+      <div className="w-fit md:pb-24 pb-10">
         <div className="flex items-center gap-x-8">
-          <p className="mt-4 text-2xl">
+          <p className="mt-4">
             <a
               href="https://twitter.com/bitcoinbrisbane/"
               target="_blank"
@@ -14,7 +14,7 @@ export const Footer: React.FC = () => (
               Twitter @bitcoinbrisbane
             </a>
           </p>
-          <p className="mt-4 text-2xl">
+          <p className="mt-4">
             <a
               href="https://facebook.com/bitcoinbrisbane/"
               target="_blank"
@@ -23,7 +23,7 @@ export const Footer: React.FC = () => (
               Facebook
             </a>
           </p>
-          <p className="mt-4 text-2xl">
+          <p className="mt-4">
             <a
               href="https://github.com/bitcoinbrisbane/"
               target="_blank"
