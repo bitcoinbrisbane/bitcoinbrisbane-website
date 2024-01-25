@@ -6,11 +6,13 @@ import {
   Sponsors,
   Footer,
 } from "../components";
+import { PreviousMeetup } from "../components/PreviousMeetups";
 
 const Home: React.FC = () => (
   <PageLayout>
     <Landing />
     <NextMeetup />
+    <PreviousMeetup />
     <Sponsors />
     <Footer />
   </PageLayout>
