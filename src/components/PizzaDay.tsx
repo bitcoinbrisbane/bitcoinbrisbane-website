@@ -35,7 +35,7 @@ export const PizzaDay = () => {
           <div className="flex-grow p-4">
             <img src={Pizza} alt="Bitcoin Pizza DAO"></img>
             <p className="mt-4 text-2xl">
-              Supported by our friends at the PizzaDAO
+              Supported by our friends at the PizzaDAO https://www.globalpizzaparty.xyz
             </p>
           </div>
         </div>
