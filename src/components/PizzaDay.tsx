@@ -6,6 +6,7 @@ export const PizzaDay = () => {
   const pizzaDay = dayjs(`${year}-05-22`);
 
   const deltaDays = pizzaDay.diff(dayjs(), "day");
+  const deltaYears = year - 2010;
 
   return (
     <section className="w-full mt-12 px-6">
@@ -23,10 +24,10 @@ export const PizzaDay = () => {
               Every year, Bitcoiners around the world celebrate the first ever
               real-world transaction using Bitcoin. On May 22nd 2010, Laszlo
               Hanyecz paid 10,000 BTC for two pizzas. This year, we're
-              celebrating the 11th anniversary of this historic event.
+              celebrating the {deltaYears}th anniversary of this historic event.
             </p>
             <p className="mt-4 text-2xl">
-              Come join us for a slice of pizza and a beer in {deltaDays} days!
+              Come join us for a slice of pizza, rare pizza NFT and a beer in {deltaDays} days!
             </p>
             <span className="block md:text-4xl text-red-700">
               RSVP AT meetup.com/bitcoinbrisbane
