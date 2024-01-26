@@ -32,7 +32,11 @@ All attendees, speakers, sponsors and volunteers at our event are required to co
 * Language or imagery which belittles individuals based on personal characteristics protected under the Australian Human Rights Commission Act 1986 is prohibited.
 * Our events are safe environments for the expression of personal work and ideas. Participants are required to provide feedback in a positive manner. Ridicule, bullying or personal embarrassment will not be tolerated. 
 * Participants violating these rules will be sanctioned or expelled from the event without a refund at the discretion of the organisers.  
-* If you are being harassed, notice that someone else is being harassed, or have any other concerns, please contact one of the events organisers. We will treat your claim seriously, and take immediate action. 
+* If you are being harassed, notice that someone else is being harassed, or have any other concerns, please contact one of the events organisers. We will treat your claim seriously, and take immediate action.
+
+## Bitcoin Pizza Day Brisbane
+
+https://www.bitcoinbrisbane.com.au/assets/pizzaguy.png![image](https://github.com/dltxio/bitcoinbrisbane-website/assets/8411406/bc09dd51-6c94-4dd1-ab72-cbf5a5798315)
 
 ## Tip Jars
 
