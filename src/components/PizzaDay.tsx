@@ -9,7 +9,7 @@ export const PizzaDay = () => {
   const deltaYears = year - 2010;
 
   return (
-    <section className="w-full mt-12 px-6">
+    <section className="w-full mt-24 px-6">
       <h2 className="font-black title text-5xl lg:text-9xl w-full text-center text-white">
         BITCOIN PIZZA DAY!
       </h2>
@@ -27,7 +27,8 @@ export const PizzaDay = () => {
               celebrating the {deltaYears}th anniversary of this historic event.
             </p>
             <p className="mt-4 text-2xl">
-              Come join us for a slice of pizza, rare pizza NFT and a beer in {deltaDays} days!
+              Come join us for a slice of pizza, rare pizza NFT and a beer in{" "}
+              {deltaDays} days!
             </p>
             <span className="block md:text-4xl text-red-700">
               RSVP AT meetup.com/bitcoinbrisbane
@@ -36,7 +37,8 @@ export const PizzaDay = () => {
           <div className="flex-grow p-4">
             <img src={Pizza} alt="Bitcoin Pizza DAO"></img>
             <p className="mt-4 text-2xl">
-              Supported by our friends at the PizzaDAO https://www.globalpizzaparty.xyz
+              Supported by our friends at the PizzaDAO
+              https://www.globalpizzaparty.xyz
             </p>
           </div>
         </div>

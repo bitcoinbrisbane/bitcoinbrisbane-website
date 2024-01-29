@@ -54,4 +54,25 @@ export type Sponsor = {
   ];
 };
 
+export type PhotoReponse = {
+  data: Photo[];
+};
+
+export type Photo = {
+  id: string;
+  attributes: {
+    title: string;
+    description: string;
+    media: {
+      data: [
+        {
+          attributes: {
+            url: string;
+          };
+        }
+      ];
+    };
+  };
+};
+
 export type AppRoutes = Array<AppRoute>;

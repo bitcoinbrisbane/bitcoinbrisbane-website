@@ -18,15 +18,15 @@ export const Sponsors = () => {
 
   const getLogo = (sponsor: any) => {
     return sponsor.attributes.logo?.data?.attributes?.formats?.thumbnail?.url;
-  }
+  };
 
   return (
-    <section className="w-full mt-12 lg:mt-48 px-6 md:pt-24">
+    <section className="w-full mt-12 lg:mt-12 px-6 md:pt-24">
       <h2 className="font-black title text-5xl lg:text-9xl w-full text-center text-white">
         SPONSORS
       </h2>
       <div className="w-full flex flex-col items-center font-hand mt-6 lg:mt-12 lg:text-xl">
-        <div className="w-fit pb-12 lg:pb-32">
+        <div className="w-fit pb-12">
           {sponsors?.map(sponsor => (
             <div
               key={sponsor.attributes.name}

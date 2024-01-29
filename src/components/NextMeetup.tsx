@@ -1,7 +1,7 @@
+import dayjs from "dayjs";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { MeetupEvent, MeetupResponse } from "../types/app";
-import dayjs from "dayjs";
 import { PizzaDay } from "./PizzaDay";
 
 export const NextMeetup = () => {
