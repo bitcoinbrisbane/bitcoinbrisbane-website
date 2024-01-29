@@ -35,23 +35,23 @@ export type MeetupEvent = {
   };
 };
 
+export type SponsorResponse = {
+  data: Sponsor[];
+};
+
 export type Sponsor = {
-  data: [
-    {
-      id: string;
-      attributes: {
-        name: string;
-        description: string;
-        logo: {
-          data: {
-            attributes: {
-              url: string;
-            };
-          };
-        }[];
+  id: string;
+  attributes: {
+    name: string;
+    description: string;
+    logo: {
+      data: {
+        attributes: {
+          url: string;
+        };
       };
-    }
-  ];
+    }[];
+  };
 };
 
 export type PhotoReponse = {
