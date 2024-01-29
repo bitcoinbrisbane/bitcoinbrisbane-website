@@ -34,7 +34,6 @@ export const NextMeetup = () => {
         setPreviousEventImageUrls(previousEventEntryMedia.map(
           (mediaEntry) => mediaEntry.attributes.url
         ))
-        console.log(previousEventImageUrls);
       })
       .catch((error: any) => {
         console.log(error);
