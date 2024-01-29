@@ -10,8 +10,8 @@ export const Halvening = () => {
         "https://api2.getpaidinbitcoin.com.au/nodes"
       );
 
-      console.log(response);
-      return "Height " + response.data[0].height.toLocaleString();
+      const delta = 840000 - response.data[0].height;
+      return "Remaining blocks " + delta.toLocaleString();
     } catch (error) {
       //
       return "Error getting blocks";
@@ -20,7 +20,6 @@ export const Halvening = () => {
 
   useEffect(() => {
     getHeight().then(height => {
-
       setHeight(height);
     });
   }, []);
@@ -39,13 +38,12 @@ export const Halvening = () => {
             </h3>
             <p className="mt-4 text-2xl">
               The amount of bitcoins rewarded for each block decreases with
-              time: it is halved every 210000 blocks. This event, the moment
+              time: it is halved every 210,000 blocks. This event, the moment
               when the mining reward is divided by 2, is commonly called
               "Bitcoin halving". Other denominations are used: "reward drop",
               "reward halving", or simply "the halving" or "the Halvening" which
               is a popular meme among bitcoiners.
             </p>
-            <p className="mt-4 text-2xl">lipsum</p>
             {/* <span className="block md:text-4xl text-red-700">
               RSVP AT meetup.com/bitcoinbrisbane
             </span> */}
