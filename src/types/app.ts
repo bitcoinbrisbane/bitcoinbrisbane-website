@@ -54,4 +54,25 @@ export type Sponsor = {
   ];
 };
 
+export type Photo = {
+  data: [
+    {
+      id: string;
+      attributes: {
+        title: string;
+        description: string;
+        media: {
+          data: [
+            {
+              attributes: {
+                url: string;
+              };
+            }
+          ]
+        }
+      };
+    }
+  ];
+};
+
 export type AppRoutes = Array<AppRoute>;
