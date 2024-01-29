@@ -9,7 +9,7 @@ export const PizzaDay = () => {
   const deltaYears = year - 2010;
 
   return (
-    <section className="w-full mt-12 px-6">
+    <section className="w-full mt-24 px-6">
       <h2 className="font-black title text-5xl lg:text-9xl w-full text-center text-white">
         BITCOIN PIZZA DAY!
       </h2>

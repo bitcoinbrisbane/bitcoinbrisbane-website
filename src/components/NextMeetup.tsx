@@ -1,8 +1,7 @@
 import dayjs from "dayjs";
 import axios from "axios";
-import Marquee from "react-fast-marquee";
 import { useEffect, useState } from "react";
-import { MeetupEvent, MeetupResponse, Photo } from "../types/app";
+import { MeetupEvent, MeetupResponse } from "../types/app";
 import { PizzaDay } from "./PizzaDay";
 
 export const NextMeetup = () => {
@@ -17,29 +16,6 @@ export const NextMeetup = () => {
     const finalDate = dayjs(`${date} ${time}`).format(format);
     return finalDate;
   };
-
-  const [previousEventImageUrls, setPreviousEventImageUrls] = useState<any[]>([]);
-
-  useEffect(() => {
-    axios
-      .get<Photo>("https://cms.dltx.io/api/photos?populate=*")
-      .then(({ data }) => {
-        const previousEventEntry = data.data.filter(
-          (dataEntry) => dataEntry.attributes.title === "previous-events"
-        );
-        if (!previousEventEntry.length) return;
-        
-        const previousEventEntryMedia = previousEventEntry[0]?.attributes.media.data;
-
-        
-        setPreviousEventImageUrls(previousEventEntryMedia.map(
-          (mediaEntry) => mediaEntry.attributes.url
-        ))
-      })
-      .catch((error: any) => {
-        console.log(error);
-      });
-  }, []);
   
   const showPizzaDay = () => {
     // const today = dayjs().format("YYYY-MM-DD");
@@ -140,23 +116,7 @@ export const NextMeetup = () => {
             meetup.com/bitcoinbrisbane
           </a>
         </p>
-      </div>
-
-      {/* Carousel of past event images */}
-      { previousEventImageUrls.length > 0 && (
-        <div className="flex flex-col text-center">
-          <Marquee speed={82}>
-            {previousEventImageUrls.map((imageUrl) => (
-              <img
-                src={imageUrl}
-                alt="past event image"
-                className="md:h-[20rem] object-cover rounded-xl m-2 h-[8rem]"
-              />
-            ))}
-          </Marquee> 
-        </div>
-      )}
-      
+      </div> */}      
     </section>
   );
 };
