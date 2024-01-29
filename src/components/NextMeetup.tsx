@@ -1,8 +1,9 @@
+import dayjs from "dayjs";
 import axios from "axios";
+import Marquee from "react-fast-marquee";
 import { useEffect, useState } from "react";
 import { MeetupEvent, MeetupResponse, Photo } from "../types/app";
-import dayjs from "dayjs";
-import Marquee from "react-fast-marquee";
+import { PizzaDay } from "./PizzaDay";
 
 export const NextMeetup = () => {
   const [event, setEvent] = useState<MeetupEvent>();
@@ -39,15 +40,32 @@ export const NextMeetup = () => {
         console.log(error);
       });
   }, []);
+  
+  const showPizzaDay = () => {
+    // const today = dayjs().format("YYYY-MM-DD");
+
+    // // show pizza day if less than 60 days before 22 may
+    // const year = dayjs().year();
+    // const pizzaDay = dayjs(`${year}-05-22`);
+
+    // const delta = pizzaDay.diff(today, "day");
+
+    // return delta < 300;
+
+    return true;
+  };
 
   useEffect(() => {
     axios
       // Add bearer token to get past CORS
-      .get<MeetupResponse>("https://cms.dltx.io/api/events?sort=id:desc&pagination[page]=1&pagination[pageSize]=1", {
-        headers: {
-          Authorization: `Bearer 077fa26ea22e6b25c78279efd6d7d6fca8194fb949ebcbeb0ce3fc4612a13883675a420d78479cc282dc04cf17a2bf5895d8b15fc77dd132c018845d3b20ebb3d2cfc8dc63cbfc25ba1fcfd574bb5178187dd29cf49014fd3a385efc431030b2455106ec2287d8324f125e3ef98da20a97f9e5c28e007a0d9e3a381d3c4e9e6a`
+      .get<MeetupResponse>(
+        "https://cms.dltx.io/api/events?sort=id:desc&pagination[page]=1&pagination[pageSize]=1",
+        {
+          headers: {
+            Authorization: `Bearer 077fa26ea22e6b25c78279efd6d7d6fca8194fb949ebcbeb0ce3fc4612a13883675a420d78479cc282dc04cf17a2bf5895d8b15fc77dd132c018845d3b20ebb3d2cfc8dc63cbfc25ba1fcfd574bb5178187dd29cf49014fd3a385efc431030b2455106ec2287d8324f125e3ef98da20a97f9e5c28e007a0d9e3a381d3c4e9e6a`
+          }
         }
-      })
+      )
       .then(({ data }) => {
         if (data.data.length === 0) return;
         const meetup: MeetupEvent = data.data[0];
@@ -107,7 +125,10 @@ export const NextMeetup = () => {
               )} */}
         </div>
       </div>
-      <div className="flex flex-col text-center">
+
+      {showPizzaDay() && <PizzaDay />}
+
+      {/* <div className="flex flex-col text-center">
         <p className="mt-48 md:text-4xl text-xl font-hand">
           Checkout our other events @
           <a
