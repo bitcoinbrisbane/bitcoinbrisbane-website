@@ -1,13 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Sponsor } from "../types/app";
+import { Sponsor, SponsorResponse } from "../types/app";
 
 export const Sponsors = () => {
-  const [sponsors, setSponsors] = useState<any[]>();
+  const [sponsors, setSponsors] = useState<Sponsor[]>();
 
   useEffect(() => {
     axios
-      .get<Sponsor>("https://cms.dltx.io/api/sponsors?populate=*")
+      .get<SponsorResponse>("https://cms.dltx.io/api/sponsors?populate=*")
       .then(({ data }) => {
         setSponsors(data.data);
       })
