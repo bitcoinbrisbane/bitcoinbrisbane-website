@@ -16,7 +16,7 @@ export const NextMeetup = () => {
     const finalDate = dayjs(`${date} ${time}`).format(format);
     return finalDate;
   };
-  
+
   const showPizzaDay = () => {
     // const today = dayjs().format("YYYY-MM-DD");
 
@@ -116,7 +116,7 @@ export const NextMeetup = () => {
             meetup.com/bitcoinbrisbane
           </a>
         </p>
-      </div> */}      
+      </div> */}
     </section>
   );
 };

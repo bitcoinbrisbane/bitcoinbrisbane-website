@@ -4,23 +4,26 @@ import { Photo, PhotoReponse } from "../types/app";
 import Marquee from "react-fast-marquee";
 
 export const PreviousMeetup = () => {
-  const [previousEventImageUrls, setPreviousEventImageUrls] = useState<any[]>([]);
+  const [previousEventImageUrls, setPreviousEventImageUrls] = useState<any[]>(
+    []
+  );
 
   useEffect(() => {
     axios
       .get<PhotoReponse>("https://cms.dltx.io/api/photos?populate=*")
       .then(({ data }) => {
         const previousEventEntry: Photo = data.data.filter(
-          (dataEntry) => dataEntry.attributes.title === "previous-events"
+          dataEntry => dataEntry.attributes.title === "previous-events"
         )[0];
         if (!previousEventEntry) return;
-        
-        const previousEventEntryMedia = previousEventEntry.attributes?.media?.data;
+
+        const previousEventEntryMedia =
+          previousEventEntry.attributes?.media?.data;
         if (!previousEventEntryMedia) return;
-        
-        setPreviousEventImageUrls(previousEventEntryMedia.map(
-          (mediaEntry) => mediaEntry.attributes.url
-        ))
+
+        setPreviousEventImageUrls(
+          previousEventEntryMedia.map(mediaEntry => mediaEntry.attributes.url)
+        );
       })
       .catch((error: any) => {
         console.log(error);

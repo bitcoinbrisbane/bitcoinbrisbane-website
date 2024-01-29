@@ -18,7 +18,7 @@ export const Sponsors = () => {
 
   const getLogo = (sponsor: any) => {
     return sponsor.attributes.logo?.data?.attributes?.formats?.thumbnail?.url;
-  }
+  };
 
   return (
     <section className="w-full mt-12 lg:mt-12 px-6 md:pt-24">
