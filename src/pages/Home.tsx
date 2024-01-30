@@ -4,7 +4,7 @@ import {
   NextMeetup,
   PageLayout,
   Sponsors,
-  Footer,
+  Footer
 } from "../components";
 import { PreviousMeetup } from "../components/PreviousMeetups";
 import { Halvening } from "../components/Halvening";

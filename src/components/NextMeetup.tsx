@@ -1,7 +1,7 @@
+import dayjs from "dayjs";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { MeetupEvent, MeetupResponse } from "../types/app";
-import dayjs from "dayjs";
 import { PizzaDay } from "./PizzaDay";
 
 export const NextMeetup = () => {
@@ -59,12 +59,10 @@ export const NextMeetup = () => {
       </h2>
       <div className="w-full mt-10 lg:mt-24 font-hand flex">
         <div className="grid grid-cols-12 items-center justify-center w-full">
-          <div className="md:col-start-3 md:col-span-9 flex flex-col col-start-2 col-span-10">
+          <div className="md:col-start-3 md:col-span-8 flex flex-col col-start-2 col-span-10">
             <h3 className="text-3xl lg:text-6xl leading-[1.5rem] relative top-1">
               {event?.attributes?.name}
             </h3>
-          </div>
-          <div className="md:col-start-3 md:col-span-4 flex flex-col col-start-2 col-span-10">
             <div className="flex flex-col gap-y-4">
               <p className="mt-4 text-2xl">{event?.attributes?.description}</p>
               <span className="block md:text-4xl text-red-700">

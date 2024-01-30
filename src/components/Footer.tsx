@@ -1,8 +1,8 @@
 import React from "react";
 
 export const Footer: React.FC = () => (
-  <section className="w-full md:mt-12 lg:mt-16 px-6">
-    <div className="w-full flex flex-col items-center font-hand mt-6 lg:mt-12 md:text-2xl text-md">
+  <section className="w-full mt-12 px-6">
+    <div className="w-full flex flex-col items-center font-hand mt-6 md:text-2xl text-md">
       <div className="w-fit md:pb-24 pb-10">
         <div className="flex items-center gap-x-8">
           <p className="mt-4">
