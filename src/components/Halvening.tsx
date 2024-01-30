@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Rocket } from "../assets";
 
 export const Halvening = () => {
   const [height, setHeight] = useState("Loading blocks...");
@@ -25,9 +26,9 @@ export const Halvening = () => {
   }, []);
 
   return (
-    <section className="w-full mt-12 px-6">
+    <section className="w-full">
       <h2 className="font-black title text-5xl lg:text-9xl w-full text-center text-white">
-        HALVENING 2024!
+        4th BTC HALVENING
       </h2>
 
       <div className="w-4/5 mx-auto font-hand">
@@ -49,7 +50,7 @@ export const Halvening = () => {
             </span> */}
           </div>
           <div className="flex-grow p-4">
-            add image
+            <img src={Rocket} alt="Rocket"></img>
             <p className="mt-4 text-2xl">
               Full node sponsored by Get Paid In Bitcoin
             </p>
