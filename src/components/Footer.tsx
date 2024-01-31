@@ -25,7 +25,7 @@ export const Footer: React.FC = () => (
           </p>
           <p className="mt-4">
             <a
-              href="https://github.com/bitcoinbrisbane/"
+              href="https://github.com/dltxio/bitcoinbrisbane-website/"
               target="_blank"
               rel="noopener noreferrer"
             >
