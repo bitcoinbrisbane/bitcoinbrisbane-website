@@ -26,7 +26,7 @@ export const Sponsors = () => {
         SPONSORS
       </h2>
       <div className="w-full flex flex-col items-center font-hand mt-6 lg:mt-12 lg:text-xl">
-        <div className="w-fit pb-12">
+        <div className="w-fit">
           {sponsors?.map(sponsor => (
             <div
               key={sponsor.attributes.name}

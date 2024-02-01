@@ -7,11 +7,13 @@ import {
   Footer
 } from "../components";
 import { PreviousMeetup } from "../components/PreviousMeetups";
+import { Halvening } from "../components/Halvening";
 
 const Home: React.FC = () => (
   <PageLayout>
     <Landing />
     <NextMeetup />
+    <Halvening />
     <PreviousMeetup />
     <Sponsors />
     <Footer />
