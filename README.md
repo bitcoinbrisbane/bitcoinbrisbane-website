@@ -20,6 +20,9 @@ Individual events can be sponsored.  All sponsors will be included on the Bitcoi
 * Independent Reserve
 * Stacks
 * Proof of Search
+* Get Paid In Bitcoin
+* Binanance AU
+* Virgo Au
 
 ## Meetup code of conduct  
 
