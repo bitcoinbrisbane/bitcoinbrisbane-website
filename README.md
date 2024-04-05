@@ -1,6 +1,8 @@
 # bitcoinbrisbane.com.au
 Website for https://bitcoinbrisbane.com.au
 
+![linkedin-banner](https://github.com/dltxio/bitcoinbrisbane/assets/8411406/4c513b9c-4719-436b-9a84-6c01ede9da6b)
+
 ## Event Sponsorship Packages
 For the Bitcoin Brisbane Meetup https://www.meetup.com/bitcoinbrisbane
 
