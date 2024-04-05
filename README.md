@@ -40,8 +40,8 @@ All attendees, speakers, sponsors and volunteers at our event are required to co
 * If you are being harassed, notice that someone else is being harassed, or have any other concerns, please contact one of the events organisers. We will treat your claim seriously, and take immediate action.
 
 ## Bitcoin Pizza Day Brisbane
+![pizzadao](https://github.com/dltxio/bitcoinbrisbane/assets/8411406/571c854d-7916-45e5-ad16-1f49b025684f)
 
-https://www.bitcoinbrisbane.com.au/assets/pizzaguy.png![image](https://github.com/dltxio/bitcoinbrisbane-website/assets/8411406/bc09dd51-6c94-4dd1-ab72-cbf5a5798315)
 
 ## Tip Jars
 
