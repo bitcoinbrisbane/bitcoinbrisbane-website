@@ -22,7 +22,7 @@ Individual events can be sponsored.  All sponsors will be included on the Bitcoi
 * Proof of Search
 * Get Paid In Bitcoin
 * Binanance AU
-* Virgo Au
+* Virgo AU
 
 ## Meetup code of conduct  
 
