@@ -22,7 +22,10 @@ export const PreviousMeetup = () => {
         if (!previousEventEntryMedia) return;
 
         setPreviousEventImageUrls(
-          previousEventEntryMedia.map(mediaEntry => mediaEntry.attributes.url)
+          previousEventEntryMedia
+            // Show newest pictures first 
+            .sort((a, b) => new Date(b.attributes.createdAt).getTime() - new Date(a.attributes.createdAt).getTime())
+            .map(mediaEntry => mediaEntry.attributes.url)
         );
       })
       .catch((error: any) => {
