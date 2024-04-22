@@ -68,6 +68,7 @@ export type Photo = {
         {
           attributes: {
             url: string;
+            createdAt: string;
           };
         }
       ];
