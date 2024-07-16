@@ -4,6 +4,7 @@ import { Rocket } from "../assets";
 
 export const Halvening = () => {
   const [height, setHeight] = useState("Loading blocks...");
+  const [number, setNumber] = useState(0);
 
   const getHeight = async () => {
     try {
@@ -11,10 +12,14 @@ export const Halvening = () => {
         "https://api2.getpaidinbitcoin.com.au/nodes"
       );
 
-      const delta = 840000 - response.data[0].height;
+      const height: number = response.data[0].height;
+      const _number: number = Math.floor(height / 210000) + 1;
+
+      setNumber(_number);
+
+      const delta = _number * 210000 - response.data[0].height;
       return "Remaining blocks " + delta.toLocaleString();
     } catch (error) {
-      //
       return "Error getting blocks";
     }
   };
@@ -28,7 +33,7 @@ export const Halvening = () => {
   return (
     <section className="w-full">
       <h2 className="font-black title text-5xl lg:text-9xl lg:my-24 my-12 w-full text-center text-white">
-        4th BTC HALVENING
+        {number}th BTC HALVENING
       </h2>
 
       <div className="w-full font-hand grid grid-cols-12">
