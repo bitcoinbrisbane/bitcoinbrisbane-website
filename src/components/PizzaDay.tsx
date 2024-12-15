@@ -2,9 +2,14 @@ import dayjs from "dayjs";
 import { Pizza } from "../assets";
 
 export const PizzaDay = () => {
-  const year = dayjs().year();
-  const pizzaDay = dayjs(`${year}-05-22`);
+  const month = dayjs().month();
+  let year = dayjs().year();
 
+  if (month > 4) {
+    year += 1;
+  };
+
+  const pizzaDay = dayjs(`${year}-05-22`);
   const deltaDays = pizzaDay.diff(dayjs(), "day");
   const deltaYears = year - 2010;
 
