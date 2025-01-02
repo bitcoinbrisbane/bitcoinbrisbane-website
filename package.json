@@ -2,9 +2,9 @@
   "name": "bitcoinbrisbane-website",
   "version": "1.0.0",
   "description": "Website for https://bitcoinbrisbane.com.au",
-  "homepage": "https://github.com/dltxio/bitcoinbrisbane-website",
+  "homepage": "https://www.bitcoinbrisbane.com.au",
   "license": "GPL-3.0-or-later",
-  "author": "@brettvniekerk",
+  "author": "@bitcoinbrisbane",
   "repository": {
     "type": "git",
     "url": "https://github.com/dltxio/bitcoinbrisbane-website.git"

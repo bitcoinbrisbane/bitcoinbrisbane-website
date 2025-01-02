@@ -38,6 +38,21 @@ export const Halvening = () => {
 
       <div className="w-full font-hand grid grid-cols-12">
         <div className="lg:col-start-3 lg:col-span-5 col-start-2 col-span-10">
+          <iframe
+            width="1120"
+            height="630"
+            src="https://www.youtube.com/embed/5Tu3fsSunSY?si=IX4Un_bQVuh_dpeC"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <div className="w-full font-hand grid grid-cols-12">
+        <div className="lg:col-start-3 lg:col-span-5 col-start-2 col-span-10">
           <h3 className="text-3xl lg:text-6xl leading-[1.5rem] relative top-1">
             {height}
           </h3>
