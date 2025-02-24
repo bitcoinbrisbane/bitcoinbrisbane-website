@@ -6,11 +6,11 @@ export const Footer: React.FC = () => (
       <div className="flex items-center gap-x-8">
         <p className="mt-4">
           <a
-            href="https://twitter.com/bitcoinbrisbane/"
+            href="https://x.com/bitcoinbrisbane/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Twitter @bitcoinbrisbane
+            X @bitcoinbrisbane
           </a>
         </p>
         <p className="mt-4">
