@@ -10,6 +10,7 @@ const Navigation: React.FC = () => (
       ))}
 
       <Route path="*" element={<Navigate to="/" />} />
+      <Route path="blog" element={<Navigate to="/blog" />} />
     </Routes>
   </BrowserRouter>
 );

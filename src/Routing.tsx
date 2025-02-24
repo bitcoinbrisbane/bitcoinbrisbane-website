@@ -1,10 +1,15 @@
 import { AppRoutes } from "./types/app";
 import Home from "./pages/Home";
+import BlogPost from "./pages/Blog";
 
 const Routing: AppRoutes = [
   {
     path: "/",
     element: <Home />
+  },
+  {
+    path: "/blog",
+    element: <BlogPost />
   }
 ];
 
