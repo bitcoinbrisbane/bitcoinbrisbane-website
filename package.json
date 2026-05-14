@@ -16,8 +16,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "pretty-quick --staged",
-    "format": "prettier -w src",
-    "prepare": "husky install"
+    "format": "prettier -w src"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.13",
@@ -31,7 +30,7 @@
     "react-spinners": "^0.13.7"
   },
   "devDependencies": {
-    "@types/node": "^18.11.13",
+    "@types/node": "^24.0.0",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.9",
     "@vitejs/plugin-react": "^3.0.0",
@@ -47,6 +46,6 @@
     "vite": "^6.2.4"
   },
   "engines": {
-    "node": ">=16.14.2"
+    "node": ">=24.0.0"
   }
 }
