@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { Rocket } from "../assets";
+
+type NodeInfo = { height: number };
 
 export const Halvening = () => {
   const [height, setHeight] = useState("Loading blocks...");
@@ -8,18 +9,18 @@ export const Halvening = () => {
 
   const getHeight = async () => {
     try {
-      const response = await axios.get(
-        "https://api2.getpaidinbitcoin.com.au/nodes"
-      );
+      const response = await fetch("https://api2.getpaidinbitcoin.com.au/nodes");
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const data: NodeInfo[] = await response.json();
 
-      const height: number = response.data[0].height;
-      const _number: number = Math.floor(height / 210000) + 1;
+      const height = data[0].height;
+      const _number = Math.floor(height / 210000) + 1;
 
       setNumber(_number);
 
-      const delta = _number * 210000 - response.data[0].height;
+      const delta = _number * 210000 - height;
       return "Remaining blocks " + delta.toLocaleString();
-    } catch (error) {
+    } catch {
       return "Error getting blocks";
     }
   };

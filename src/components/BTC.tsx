@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Button } from "./Button";
-import axios from "axios";
+
+const PRICE_URL =
+  "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=aud";
 
 export const BTC: React.FC = () => {
   const [price, setPrice] = useState(" loading...");
@@ -8,11 +10,15 @@ export const BTC: React.FC = () => {
   useEffect(() => {
     const fetchBitcoinPrice = async () => {
       try {
-        const response = await axios.get(
-          "https://api.coindesk.com/v1/bpi/currentprice.json"
+        const response = await fetch(PRICE_URL);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data: { bitcoin: { aud: number } } = await response.json();
+        setPrice(
+          "$" +
+            data.bitcoin.aud.toLocaleString("en-AU", {
+              maximumFractionDigits: 0
+            })
         );
-        const _price = "$" + response.data.bpi.USD.rate.toString();
-        setPrice(_price);
       } catch (error) {
         console.error(error);
       }

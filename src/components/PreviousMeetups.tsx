@@ -1,19 +1,21 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { Photo, PhotoReponse } from "../types/app";
 import Marquee from "react-fast-marquee";
 
 export const PreviousMeetup = () => {
-  const [previousEventImageUrls, setPreviousEventImageUrls] = useState<any[]>(
+  const [previousEventImageUrls, setPreviousEventImageUrls] = useState<string[]>(
     []
   );
 
   useEffect(() => {
-    axios
-      .get<PhotoReponse>("https://cms.dltx.io/api/photos?populate=*")
-      .then(({ data }) => {
+    fetch("https://cms.dltx.io/api/photos?populate=*")
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json() as Promise<PhotoReponse>;
+      })
+      .then(data => {
         const previousEventEntry: Photo = data.data.filter(
-          dataEntry => dataEntry.attributes.title === "previous-events"
+          (dataEntry: Photo) => dataEntry.attributes.title === "previous-events"
         )[0];
         if (!previousEventEntry) return;
 
@@ -23,12 +25,15 @@ export const PreviousMeetup = () => {
 
         setPreviousEventImageUrls(
           previousEventEntryMedia
-            // Show newest pictures first 
-            .sort((a, b) => new Date(b.attributes.createdAt).getTime() - new Date(a.attributes.createdAt).getTime())
+            .sort(
+              (a, b) =>
+                new Date(b.attributes.createdAt).getTime() -
+                new Date(a.attributes.createdAt).getTime()
+            )
             .map(mediaEntry => mediaEntry.attributes.url)
         );
       })
-      .catch((error: any) => {
+      .catch(error => {
         console.log(error);
       });
   }, []);
