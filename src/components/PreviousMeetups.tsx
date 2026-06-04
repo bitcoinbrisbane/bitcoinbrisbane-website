@@ -51,7 +51,7 @@ export const PreviousMeetup = () => {
             {previousEventImageUrls.map(imageUrl => (
               <img
                 src={imageUrl}
-                alt="past event image"
+                alt=""
                 className="md:h-[20rem] object-cover rounded-xl m-2 h-[8rem]"
               />
             ))}
