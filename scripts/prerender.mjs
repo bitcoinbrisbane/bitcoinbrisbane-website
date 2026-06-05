@@ -14,4 +14,3 @@ await writeFile(resolve(dist, "index.html"), output, "utf-8");
 console.log("prerendered / -> dist/index.html");
 
 await rm(resolve(dist, "server"), { recursive: true, force: true });
-
