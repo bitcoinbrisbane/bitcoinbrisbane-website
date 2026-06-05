@@ -60,33 +60,41 @@ export const NextMeetup = () => {
       <div className="w-full mt-10 lg:mt-24 font-hand flex">
         <div className="grid grid-cols-12 items-center justify-center w-full">
           <div className="md:col-start-3 md:col-span-8 flex flex-col col-start-2 col-span-10">
-            <h3 className="text-3xl lg:text-6xl leading-[1.5rem] relative top-1">
-              {event?.attributes?.name}
-            </h3>
-            <div className="flex flex-col gap-y-4">
-              <p className="mt-4 text-2xl">{event?.attributes?.description}</p>
-              <span className="block md:text-4xl text-red-700">
-                {convertDateAndTime(
-                  event?.attributes?.date,
-                  event?.attributes?.time,
-                  "h:mm a"
-                )}{" "}
-                |{" "}
-                {convertDateAndTime(
-                  event?.attributes?.date,
-                  event?.attributes?.time
-                )}{" "}
-                AEST | {event?.attributes?.venue} |{" "}
-                <a
-                  className="underline underline-offset-4"
-                  href="https://www.meetup.com/bitcoinbrisbane/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  RSVP
-                </a>
-              </span>
-            </div>
+            {event ? (
+              <>
+                <h3 className="text-3xl lg:text-6xl leading-[1.5rem] relative top-1">
+                  {event.attributes?.name}
+                </h3>
+                <div className="flex flex-col gap-y-4">
+                  <p className="mt-4 text-2xl">
+                    {event.attributes?.description}
+                  </p>
+                  <span className="block md:text-4xl text-red-700">
+                    {convertDateAndTime(
+                      event.attributes?.date,
+                      event.attributes?.time,
+                      "h:mm a"
+                    )}{" "}
+                    |{" "}
+                    {convertDateAndTime(
+                      event.attributes?.date,
+                      event.attributes?.time
+                    )}{" "}
+                    AEST | {event.attributes?.venue} |{" "}
+                    <a
+                      className="underline underline-offset-4"
+                      href="https://www.meetup.com/bitcoinbrisbane/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      RSVP
+                    </a>
+                  </span>
+                </div>
+              </>
+            ) : (
+              <p className="text-4xl lg:text-7xl text-center">Coming soon</p>
+            )}
           </div>
           {/* {event?.attributes?.photo?.data !== "null" || (
                 <div className="col-start-8 col-span-3">
