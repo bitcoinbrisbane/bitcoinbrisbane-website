@@ -1,7 +1,11 @@
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
-import Marquee from "react-fast-marquee";
+import MarqueeImport from "react-fast-marquee";
 import { EventsFile } from "../types/app";
+
+const Marquee =
+  (MarqueeImport as unknown as { default?: typeof MarqueeImport }).default ??
+  MarqueeImport;
 
 export const PreviousMeetup = () => {
   const [previousEventImageUrls, setPreviousEventImageUrls] = useState<string[]>(
