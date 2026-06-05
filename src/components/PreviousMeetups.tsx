@@ -1,6 +1,7 @@
+import dayjs from "dayjs";
 import { useEffect, useState } from "react";
-import { Photo, PhotoReponse } from "../types/app";
 import Marquee from "react-fast-marquee";
+import { EventsFile } from "../types/app";
 
 export const PreviousMeetup = () => {
   const [previousEventImageUrls, setPreviousEventImageUrls] = useState<string[]>(
@@ -8,30 +9,19 @@ export const PreviousMeetup = () => {
   );
 
   useEffect(() => {
-    fetch("https://cms.dltx.io/api/photos?populate=*")
+    fetch("/events.json")
       .then(res => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        return res.json() as Promise<PhotoReponse>;
+        return res.json() as Promise<EventsFile>;
       })
       .then(data => {
-        const previousEventEntry: Photo = data.data.filter(
-          (dataEntry: Photo) => dataEntry.attributes.title === "previous-events"
-        )[0];
-        if (!previousEventEntry) return;
-
-        const previousEventEntryMedia =
-          previousEventEntry.attributes?.media?.data;
-        if (!previousEventEntryMedia) return;
-
-        setPreviousEventImageUrls(
-          previousEventEntryMedia
-            .sort(
-              (a, b) =>
-                new Date(b.attributes.createdAt).getTime() -
-                new Date(a.attributes.createdAt).getTime()
-            )
-            .map(mediaEntry => mediaEntry.attributes.url)
-        );
+        const today = dayjs().startOf("day");
+        const past = data.events
+          .filter(e => dayjs(e.date).isBefore(today))
+          .sort((a, b) => b.date.localeCompare(a.date))
+          .map(e => e.image)
+          .filter((src): src is string => Boolean(src));
+        setPreviousEventImageUrls(past);
       })
       .catch(error => {
         console.log(error);
@@ -44,12 +34,12 @@ export const PreviousMeetup = () => {
         PAST EVENTS
       </h2>
 
-      {/* Carousel of past event images */}
       {previousEventImageUrls.length > 0 && (
         <div className="flex flex-col text-center mt-4 mb-4">
           <Marquee speed={82}>
             {previousEventImageUrls.map(imageUrl => (
               <img
+                key={imageUrl}
                 src={imageUrl}
                 alt=""
                 className="md:h-[20rem] object-cover rounded-xl m-2 h-[8rem]"

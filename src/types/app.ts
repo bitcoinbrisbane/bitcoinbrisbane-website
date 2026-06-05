@@ -9,71 +9,17 @@ export type AppRoute = {
   props?: RouteProps;
 };
 
-export type MeetupResponse = {
-  data: MeetupEvent[];
-};
+export type AppRoutes = Array<AppRoute>;
 
 export type MeetupEvent = {
-  id: string;
-  attributes: {
-    name: string;
-    description: string;
-    date: string;
-    time: string;
-    venue: string;
-    photo: {
-      data: {
-        attributes: {
-          formats: {
-            large: {
-              url: string;
-            };
-          };
-        };
-      }[];
-    };
-  };
+  date: string;
+  time?: string;
+  name?: string;
+  description?: string;
+  venue?: string;
+  image?: string;
 };
 
-export type SponsorResponse = {
-  data: Sponsor[];
+export type EventsFile = {
+  events: MeetupEvent[];
 };
-
-export type Sponsor = {
-  id: string;
-  attributes: {
-    name: string;
-    description: string;
-    logo: {
-      data: {
-        attributes: {
-          url: string;
-        };
-      };
-    }[];
-  };
-};
-
-export type PhotoReponse = {
-  data: Photo[];
-};
-
-export type Photo = {
-  id: string;
-  attributes: {
-    title: string;
-    description: string;
-    media: {
-      data: [
-        {
-          attributes: {
-            url: string;
-            createdAt: string;
-          };
-        }
-      ];
-    };
-  };
-};
-
-export type AppRoutes = Array<AppRoute>;
