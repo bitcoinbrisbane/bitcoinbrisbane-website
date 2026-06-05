@@ -1,6 +1,7 @@
 import { AppRoutes } from "./types/app";
 import Home from "./pages/Home";
-import BlogPost from "./pages/Blog";
+import Blog from "./pages/Blog";
+import Article from "./pages/Article";
 
 const Routing: AppRoutes = [
   {
@@ -9,7 +10,11 @@ const Routing: AppRoutes = [
   },
   {
     path: "/blog",
-    element: <BlogPost />
+    element: <Blog />
+  },
+  {
+    path: "/blog/:slug",
+    element: <Article />
   }
 ];
 
